@@ -1,17 +1,19 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import { journalDate } from '../helpers/date';
-import url_for from '../helpers/url';
-import urljoin from '../helpers/join';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { journalDate } from "../helpers/date";
+import url_for from "../helpers/url";
+import urljoin from "../helpers/join";
 
-type PropsBase = CollectionEntry<'journal'>['data'];
+type PropsBase = CollectionEntry<"journal">["data"];
 export interface Props extends PropsBase {
 	editor_slug: string;
+	prev_slug: string | undefined;
+	next_slug: string | undefined;
 }
 
-const { date, editor_slug } = Astro.props;
+const { date, editor_slug, prev_slug, next_slug } = Astro.props;
 const dateFmt = journalDate(date);
 ---
 
@@ -49,7 +51,11 @@ const dateFmt = journalDate(date);
 			<article data-slug={urljoin("journal", editor_slug)}>
 				<div class="prose">
 					<div class="title">
-						<h5>{dateFmt}</h4>
+						<h5>
+							{prev_slug && <a href={url_for(`journal/${prev_slug}/`)}>⬅</a>}
+							{dateFmt}
+							{next_slug && <a href={url_for(`journal/${next_slug}/`)}>➡</a>
+						</h5>
 					</div>
 					<slot />
 				</div>

@@ -20,7 +20,7 @@ async function generateStorkIndex() {
 
   const blogs = await getCollection("blog");
   const posts = (await getCollection("notes")).filter(
-    (post) => !post.slug.startsWith("personal/")
+    (post) => !post.slug.startsWith("personal/"),
   );
   const journal = await getCollection("journal");
 

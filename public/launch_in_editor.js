@@ -25,7 +25,7 @@
   const title = document.querySelector("nav h2");
   title.innerText = "Editor";
   title.addEventListener("click", () =>
-    fetch(`http://localhost:12593/launch?file=${slug}`)
+    fetch(`http://localhost:12593/launch?file=${slug}`),
   );
   title.style.cursor = "pointer";
   title.style.textDecoration = "underline";

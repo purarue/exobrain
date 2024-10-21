@@ -66,7 +66,7 @@ function walkTree(tree: any, indent = ""): Line[] {
         // TODO: these spaces dont actually work because of HTML rendering
         // use some other character or add some CSS?
         // gets to be real confusing though, might just leave it as is
-        indent + (isLast ? "    " : "│   ")
+        indent + (isLast ? "    " : "│   "),
       );
       lines.push(...nestedLines);
     }
