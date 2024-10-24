@@ -6,9 +6,9 @@ title: Structuring Projects
 
 Run:
 
-`go mod init github.com/seanbreckenridge/project_name`
+`go mod init github.com/purarue/project_name`
 
-when in `$GOPATH/src/github.com/seanbreckenridge/project_name`
+when in `$GOPATH/src/github.com/purarue/project_name`
 
 .. to initialize your project properly.
 
@@ -23,7 +23,7 @@ Making functions start with uppercase automatically exports the function from th
 
 To do both a command and a library, you typically have a `cmd/package_name/main.go` file, which can then be installed from:
 
-`go get github.com/seanbreckenridge/project_name/cmd/command_name`
+`go get github.com/purarue/project_name/cmd/command_name`
 
 .. and installed locally like:
 

@@ -6,13 +6,13 @@ description: Issues installing sonic-pi on arch
 
 Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/5a25d300e41668adee865ff361208cc84c2e647a/BUILD-LINUX.md) on arch.
 
-<https://github.com/seanbreckenridge/sonic_pi_music>
+<https://github.com/purarue/sonic_pi_music>
 
 For context, I use pulseaudio, not alsa.
 
 After running: `yay -S sonic-pi`
 
-The default `sonic-pi` package from community failed to launch because of JACK errors; [errorlog](https://gist.github.com/seanbreckenridge/99fa2e3d94d30b3193a903634990f06f)
+The default `sonic-pi` package from community failed to launch because of JACK errors; [errorlog](https://gist.github.com/purarue/99fa2e3d94d30b3193a903634990f06f)
 
 ```
 JACK is running in realtime mode, but you are not allowed to use realtime scheduling.

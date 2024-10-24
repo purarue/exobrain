@@ -31,7 +31,7 @@ generate_types: built
 #############
 
 # https://github.com/codespell-project/codespell using a wrapper script of mine:
-# https://github.com/seanbreckenridge/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
+# https://github.com/purarue/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
 spell:
 	spell '.' './src/'
 

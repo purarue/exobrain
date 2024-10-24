@@ -30,7 +30,7 @@ As an example, to prompt me to select something:
 pick='fzf'
 # if run from rofi/i3, use picker instead
 if [[ "$(tty)" = "not a tty" ]]; then
-    # https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/picker
+    # https://github.com/purarue/pura-utils/blob/main/shellscripts/picker
 	pick='picker'
 fi
 
@@ -53,7 +53,7 @@ Note: may be some issues depending on how you've started your display server, se
 
 ```bash
 # special syntax to expand \n to actual newline in string
-name=$'Sean\nBreckenridge'
+name=$'First\nLast'
 echo "$name" # receives one argument
 
 # weird printf trickery

@@ -2,20 +2,20 @@
 title: Tools, or how I do everything
 ---
 
-This describes a lot of the tools I use in my [`dotfiles`](https://github.com/seanbreckenridge/dotfiles)
+This describes a lot of the tools I use in my [`dotfiles`](https://github.com/purarue/dotfiles)
 
 This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow.
 
-Most of these are command line based, I wrap a lot of them in scripts [here](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts) and in my [`seanb-utils`](https://github.com/seanbreckenridge/seanb-utils) scripts repo
+Most of these are command line based, I wrap a lot of them in scripts [here](https://github.com/purarue/dotfiles/tree/master/.local/scripts) and in my [`pura-utils`](https://github.com/purarue/pura-utils) scripts repo
 
-For other stuff I might be using, see [my github stars](https://github.com/seanbreckenridge?direction=desc&sort=stars&tab=stars)
+For other stuff I might be using, see [my github stars](https://github.com/purarue?direction=desc&sort=stars&tab=stars)
 
 - Shells
   - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like [highlighting and auto completion](https://github.com/marlonrichert/zsh-autocomplete). Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`
-  - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script sets up new bash servers for me nicely, see [this post](../../blog/server-setup/) for more info
+  - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/purarue/bootstrap/) script sets up new bash servers for me nicely, see [this post](../../blog/server-setup/) for more info
 - Terminal
   - [`wezterm`](https://wezfurlong.org/wezterm/index.html), which I've customized some:
-    - a special [`cat`](https://github.com/seanbreckenridge/dotfiles/blob/8457f501779f6eefccef14a9551c1eeafe0d629e/.config/zsh/progressive_enhancement.zsh#L72-L107) alias which lets me `cat` images and directories, while in the terminal
+    - a special [`cat`](https://github.com/purarue/dotfiles/blob/8457f501779f6eefccef14a9551c1eeafe0d629e/.config/zsh/progressive_enhancement.zsh#L72-L107) alias which lets me `cat` images and directories, while in the terminal
 
 ### OS-stuff
 
@@ -27,7 +27,7 @@ For other stuff I might be using, see [my github stars](https://github.com/seanb
   - [`autotiling`](https://github.com/nwg-piotr/autotiling) for automatic tiling
   - [`redshift`](http://jonls.dk/redshift/) to adjust color temperature
 - Mac
-  - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/seanb-utils#script-index) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
+  - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/purarue/pura-utils#script-index) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
 - Android (using [termux](https://termux.dev/en/))
 
 ### Browsers
@@ -45,26 +45,26 @@ For other stuff I might be using, see [my github stars](https://github.com/seanb
 
 ### General Workflow/Tools
 
-- Editor: nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/seanbreckenridge/dotfiles/tree/master/.config/nvim), mostly in lua
+- Editor: nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/purarue/dotfiles/tree/master/.config/nvim), mostly in lua
 - Email [`neomutt`](https://github.com/neomutt/neomutt) for email, using [mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard) as a configuration layer to set it up
-- RSS: [`newsboat`](https://newsboat.org/) for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser
+- RSS: [`newsboat`](https://newsboat.org/) for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
 - Backups:
   - [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
   - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [small script](https://sean.fish/d/restic-backup?redirect) to help manage all of that
-- Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces lets me enter a deadline using plain english and converts it to a datetime, so is nice for quick reminders. [todotxt-more](https://git.sr.ht/~proycon/todotxt-more) has some great addons as well
-- Calendar: [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/seanbreckenridge/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
+- Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/purarue/full_todotxt) for adding todos. The TUI I wrote forces lets me enter a deadline using plain english and converts it to a datetime, so is nice for quick reminders. [todotxt-more](https://git.sr.ht/~proycon/todotxt-more) has some great addons as well
+- Calendar: [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/purarue/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
 - File Manager: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://sean.fish/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?redirect) (previewer)
-- Task Scheduler: bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks)
+- Task Scheduler: bash script ([`bgproc`](https://github.com/purarue/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/purarue/evry) tool to schedule tasks)
 
 ### Media
 
-- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
+- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/purarue/pura-utils/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
 - Music:
   - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://sean.fish/d/.config/beets/config.yaml?redirect)
-  - my `bash` [terminal playlist manager](https://github.com/seanbreckenridge/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
+  - my `bash` [terminal playlist manager](https://github.com/purarue/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
 - Images/Video:
   - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
-  - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
+  - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/purarue/pura-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
   - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
   - For trimming video, I use an [encode_webm](https://github.com/occivink/mpv-scripts/blob/master/script-opts/encode_webm.conf) keybinding in mpv
 
@@ -83,9 +83,9 @@ For other stuff I might be using, see [my github stars](https://github.com/seanb
 
 Mine:
 
-- FileHosting: To host files publicly quickly, I just sync it up to my server and serve it with `nginx`, using my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/bin/remsync) script. [`croc`](https://github.com/schollz/croc) is nice, but that assumes the other person has terminal literacy
-- [password generator](https://github.com/seanbreckenridge/genpasswd)
-- [url shortener](https://github.com/seanbreckenridge/no-db-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/bin/shorten) to create new public URLs
+- FileHosting: To host files publicly quickly, I just sync it up to my server and serve it with `nginx`, using my [`remsync`](https://github.com/purarue/vps/blob/master/bin/remsync) script. [`croc`](https://github.com/schollz/croc) is nice, but that assumes the other person has terminal literacy
+- [password generator](https://github.com/purarue/genpasswd)
+- [url shortener](https://github.com/purarue/no-db-shorturl/) with [this script](https://github.com/purarue/vps/blob/master/bin/shorten) to create new public URLs
 
 Others:
 
@@ -101,7 +101,7 @@ Others:
 - [`pandoc`](https://pandoc.org/) to convert formats (lots of markdown -> html)
 - [`pygmentize`](https://pygments.org/docs/cmdline/) to convert text to HTML - [`text2html`](https://sean.fish/d/text2html?redirect)
 - [`jq`](https://stedolan.github.io/jq/) to process json streams
-- [`oh-my-stars`](https://github.com/seanbreckenridge/oh-my-stars) (my fork) to search github stars offline
+- [`oh-my-stars`](https://github.com/purarue/oh-my-stars) (my fork) to search github stars offline
 - [`vipe`](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) to download video/audio from [tons of places](https://ytdl-org.github.io/youtube-dl/supportedsites.html). `yt-dlp` is a `youtube-dl` fork which downloads faster and has more features
 - [`yadm`](https://github.com/TheLocehiliosan/yadm) to manage my dotfiles
@@ -135,7 +135,7 @@ Others:
 - [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
 - [`moby`](https://github.com/words/moby) as a thesaurus
-- [`ix`](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
+- [`ix`](https://github.com/purarue/pura-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
 
 ### Other GUI Applications I use less often
 

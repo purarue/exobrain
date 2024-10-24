@@ -43,12 +43,12 @@ Host vps
 
 Then I can just connect with `ssh vps`
 
-5. `ssh` onto the server and run my [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script:
+5. `ssh` onto the server and run my [`bootstrap`](https://github.com/purarue/bootstrap/) script:
    That sets up some bash defaults: aliases, `neovim` configuration, installs [`fzf`](https://github.com/junegunn/fzf), prompts me to setup Github username/email.
 
 ```
 sudo apt install neovim git curl
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/seanbreckenridge/bootstrap/master/bootstrap)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/purarue/bootstrap/master/bootstrap)"
 ```
 
 6. Strengthen `ssh` configuration: disable root login, password authentication (have to use ssh-key). Make sure the following lines exist and are uncommented in `/etc/ssh/sshd_config`:
@@ -93,7 +93,7 @@ Just the base installation for now, test it by going to the IP address in the br
 
 This is heavily modified after my applications are set up, see below.
 
-9. Install lots of things to configure my applications/webapps, see [vps](https://github.com/seanbreckenridge/vps):
+9. Install lots of things to configure my applications/webapps, see [vps](https://github.com/purarue/vps):
 
 ```shell
 # setup docker
@@ -145,9 +145,9 @@ pip3 install --user --upgrade ranger-fm speedtest-cli
 # add myself to the adm group so that I have permission to view logs at /var/log/ without sudo
 sudo usermod -aG adm "$(whoami)"
 
-# Run my `vps_install` script to setup all of my application data/verify I have all of my packages installed: https://github.com/seanbreckenridge/vps
+# Run my `vps_install` script to setup all of my application data/verify I have all of my packages installed: https://github.com/purarue/vps
 # sets up logging for all my applications, centralizes that in ~/logs, sets up basic HTTPAuth for nginx using apache2-utils, sets up supervisor for process management
-git clone git@github.com:seanbreckenridge/vps ~/vps
+git clone git@github.com:purarue/vps ~/vps
 cd ~/vps
 ./vps_install  # clone/setup all my applications
 ./generate_static_sites  # clone/generate all my static sites
@@ -256,7 +256,7 @@ Restart the system, and check that `nginx`'s file limit has increased:
 
 15. Setup some server monitoring.
 
-Install [`netdata`](https://www.netdata.cloud/) and [my fork of `superhooks`](https://github.com/seanbreckenridge/superhooks) (in my `supervisord.conf` in my [vps repo](https://github.com/seanbreckenridge/vps)) for server and [`supervisor`](https://github.com/Supervisor/supervisor) process monitoring respectively:
+Install [`netdata`](https://www.netdata.cloud/) and [my fork of `superhooks`](https://github.com/purarue/superhooks) (in my `supervisord.conf` in my [vps repo](https://github.com/purarue/vps)) for server and [`supervisor`](https://github.com/Supervisor/supervisor) process monitoring respectively:
 
 ```
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)

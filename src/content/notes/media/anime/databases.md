@@ -24,11 +24,11 @@ From about 2015-2018, I spent quite a lot of time watching anime. Less recently,
 
 There was a point in early 2017 where I had watched every music video/short film on MAL, and there wasn't what I considered to be a comprehensive list, so I ended up creating [a list of my favorites](https://sean.fish/animeshorts/).
 
-Ended up writing [lots of userscripts](https://greasyfork.org/en/scripts?set=22083) for MAL, because it isn't the best out of the box. ([Github Repo](http://github.com/seanbreckenridge/greasyfork))
+Ended up writing [lots of userscripts](https://greasyfork.org/en/scripts?set=22083) for MAL, because it isn't the best out of the box. ([Github Repo](http://github.com/purarue/greasyfork))
 
 In the past, I used the newly added entry feed to discover new interesting short films/music videos to watch, as entries were added to the database I would watch everything. Most things were bad, but sometimes I would find something great, and I enjoyed being able to share that with people.
 
-The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [webscraper](https://github.com/Hiyori-API/checker_mal) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/seanbreckenridge/mal-unapproved) to list unapproved entries, a [discord bot](https://github.com/seanbreckenridge/mal-notify-bot) to notify me whenever new ones are added, as well as [archiving any deleted/denied](https://sean.fish/dbsentinel/) entries.
+The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [webscraper](https://github.com/Hiyori-API/checker_mal) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/purarue/mal-unapproved) to list unapproved entries, a [discord bot](https://github.com/purarue/mal-notify-bot) to notify me whenever new ones are added, as well as [archiving any deleted/denied](https://sean.fish/dbsentinel/) entries.
 
 ![list of unapproved MAL entries](./images/unapproved.png)
 

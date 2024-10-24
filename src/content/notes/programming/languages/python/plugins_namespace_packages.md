@@ -2,7 +2,7 @@
 title: Python Plugins/Namespace Packages
 ---
 
-My [HPI](https://github.com/seanbreckenridge/HPI) repo is an example of using [namespace packages as an plugin mechanism](https://packaging.python.org/guides/creating-and-discovering-plugins/#using-namespace-packages).
+My [HPI](https://github.com/purarue/HPI) repo is an example of using [namespace packages as an plugin mechanism](https://packaging.python.org/guides/creating-and-discovering-plugins/#using-namespace-packages).
 
 Both of them are installed as an editable package (like `pip install -e .`, which adds a `egg` file to `~/.local/lib/python3.9/site-packages/`, and a line to `~/.local/lib/python3.9/site-packages/easy-install.pth`.
 
@@ -24,4 +24,4 @@ cat ~/.local/lib/python3.9/site-packages/easy-install.pth
 
 means that `HPI` overrides any namespace packages in `HPI-to-master`.
 
-The fact that it overrides is great! Since it means I can overwrite files in the upstream repo without having to maintain a fork and having to deal with merging changes back and forth. But, sometimes when re-installing (or for some reason I can't seem to find) `easy-install.pth` gets messed with. To fix that, created [reorder_editable](https://github.com/seanbreckenridge/reorder_editable), which naively reorders my `easy-install.pth`.
+The fact that it overrides is great! Since it means I can overwrite files in the upstream repo without having to maintain a fork and having to deal with merging changes back and forth. But, sometimes when re-installing (or for some reason I can't seem to find) `easy-install.pth` gets messed with. To fix that, created [reorder_editable](https://github.com/purarue/reorder_editable), which naively reorders my `easy-install.pth`.

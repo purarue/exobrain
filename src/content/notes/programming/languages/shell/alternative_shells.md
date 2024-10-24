@@ -86,7 +86,7 @@ Things that this _WOULDNT_ support, because good tools already exist:
 
 At that point, the custom tools you're writing are replaceable by a couple `jq`/`awk`/`perl` pipelines, and it'd be more code to write some custom solution. Nice thing about `mario` is that you have access to the python stdlib, and common string manipulation functions, which is what the custom tool I write would offer over `awk`/`jq`. And nice string handling in the shell is needed, its often sort of hacky to fix strings in the shell. (though `-z`/`-n`) is nice
 
-So. the solution for one liners is learn `perl` (which [I have been doing](https://github.com/seanbreckenridge/pmark)), use `gron`/`jq`, all fallback to python when necessary.
+So. the solution for one liners is learn `perl` (which [I have been doing](https://github.com/purarue/pmark)), use `gron`/`jq`, all fallback to python when necessary.
 
 [`yq`](https://github.com/kislyuk/yq) (analogous to `jq` for `yaml`/`XML`)
 

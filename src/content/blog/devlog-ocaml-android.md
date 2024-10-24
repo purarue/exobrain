@@ -83,4 +83,4 @@ make release
 make install PREFIX=$PREFIX
 ```
 
-Still not sure if third party deps install properly, I've only used it for a `dune` build with no package dependencies (A little [calculator](https://github.com/seanbreckenridge/calc_ans) I wrote)
+Still not sure if third party deps install properly, I've only used it for a `dune` build with no package dependencies (A little [calculator](https://github.com/purarue/calc_ans) I wrote)
