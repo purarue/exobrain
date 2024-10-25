@@ -12,7 +12,7 @@ For example, if you write:
 
 and then on that line, type `!!bash`, it'll send that to bash, and replace the current line with the output of that command.
 
-`/home/sean/.local/bin/docker-compose`
+`/home/username/.local/bin/docker-compose`
 
 Could just as easily send some snippet of code to python or perl, or _anything_.
 

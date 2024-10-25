@@ -270,7 +270,7 @@ Both `netdata` and [`goaccess`](https://goaccess.io/) (nginx log parser) are pas
 
 ```
 location /logs {
-  alias /home/sean/.goaccess_html;
+  alias /home/username/.goaccess_html;
   try_files $uri $uri/ =404;
   auth_basic "for logs!";
   auth_basic_user_file /etc/nginx/.htpasswd;

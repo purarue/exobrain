@@ -18,8 +18,8 @@ Downsides:
 
 ```bash
 cat ~/.local/lib/python3.9/site-packages/easy-install.pth
-/home/sean/Repos/HPI
-/home/sean/Repos/HPI-to-master
+/home/username/Repos/HPI
+/home/username/Repos/HPI-to-master
 ```
 
 means that `HPI` overrides any namespace packages in `HPI-to-master`.
