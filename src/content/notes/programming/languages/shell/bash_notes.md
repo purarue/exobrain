@@ -550,7 +550,7 @@ Removal from left edge:
 
 ```bash
 [ ~ ] $ echo ${HOME}
-/home/sean
+/home/username/
 [ ~ ] $ echo ${HOME#*/}
 home/sean
 [ ~ ] $ echo ${HOME##*/}
