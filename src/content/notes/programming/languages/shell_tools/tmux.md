@@ -2,7 +2,7 @@
 title: Tmux Notes
 ---
 
-See <https://sean.fish/d/.tmux.conf?dark> for my config
+See <https://purarue.xyz/d/.tmux.conf?dark> for my config
 
 prefix : to bring up tmux command prompt
 prefix ; to swap between panes

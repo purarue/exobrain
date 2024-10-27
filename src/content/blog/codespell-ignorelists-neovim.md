@@ -8,7 +8,7 @@ The [builtin spell checker](https://neovim.io/doc/user/spell.html) for [neovim](
 
 I do sometimes use `:set spell`, and use `]s` and `[s` to jump between all the possibly misspelled words -- but especially when writing code, documentation, or even using URLs that include links to projects, it tends to report a lot of false positives.
 
-As an example, looking at my [todo blog post](https://sean.fish/x/blog/managing-multiple-todo-txts/), it thinks `sean`, `todo`, `txt`, and `fzf` are are misspelled, because those aren't in its dictionary. You could expand the dictionary to support lots more words, but supporting thousands of acronyms means that you'll get false negatives as well.
+As an example, looking at my [todo blog post](https://purarue.xyz/x/blog/managing-multiple-todo-txts/), it thinks `todo`, `txt`, and `fzf` are are misspelled, because those aren't in its dictionary. You could expand the dictionary to support lots more words, but supporting thousands of acronyms means that you'll get false negatives as well.
 
 I'd like to have something running to fix spellings for me, but not have it be that strict.
 

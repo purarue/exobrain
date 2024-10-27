@@ -10,7 +10,7 @@ import Compress from "astro-compress";
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 const isProd = import.meta.env.PROD;
 let base = env.BASE || "/";
-let site = env.SITE || "https://sean.fish";
+let site = env.SITE || "https://purarue.xyz";
 let port = env.PORT || "4321";
 
 // force localhost if not prod

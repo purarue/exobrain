@@ -43,7 +43,7 @@ JACK is running in realtime mode, but you are not allowed to use realtime schedu
 
 Your system has an audio group, but you are not a member of it.
 Please add yourself to the audio group by executing (as root):
-  usermod -a -G audio sean
+  usermod -a -G audio $(whoami)
 ```
 
 So, I ran: `sudo usermod -aG audio "$(whoami)"`
@@ -72,7 +72,7 @@ Doesn't seem that there's a jack daemon running in the background, not sure if t
 
 ```
 [ ~ ] $ ps -ef | grep jack
-sean        1959    1934  0 11:14 pts/9    00:00:00 grep jack
+username        1959    1934  0 11:14 pts/9    00:00:00 grep jack
 ```
 
 I found the solution to this on [this](https://github.com/sonic-pi-net/sonic-pi/issues/1908) issue; which is to run `jackd` and `qjackctl` manually:

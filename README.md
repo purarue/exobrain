@@ -1,4 +1,4 @@
-Live at <https://sean.fish/x/>
+Live at <https://purarue.xyz/x/>
 
 Any code here is licensed under the MIT license, see [LICENSE](./LICENSE), feel free to steal whatever.
 

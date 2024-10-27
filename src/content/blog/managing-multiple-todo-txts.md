@@ -49,4 +49,4 @@ Ive found this to be the least amount of mental overhead to create a new `todo.t
 
 Since my `~/Documents/` directory is synced with [syncthing](https://syncthing.net/), everything is automatically backed up and synced across my devices.
 
-Edit: I've since created a [script](https://sean.fish/d/todo-new?redirect) that just generates that tiny file for me, so I can create new lists whenever I want.
+Edit: I've since created a [script](https://purarue.xyz/d/todo-new?redirect) that just generates that tiny file for me, so I can create new lists whenever I want.

@@ -7,5 +7,5 @@ set -o pipefail
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}/.." || exit $?
 
-# https://sean.fish/d/with-secrets?redirect
+# https://purarue.xyz/d/with-secrets?redirect
 with-secrets go run ./scripts/launch_in_editor.go -dir ./src/content "$@" 2>&1 | tee -a /tmp/exobrain-launch-in-editor.log

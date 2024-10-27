@@ -48,8 +48,8 @@ My general sentiment is, I want to move closer to what I did with my [music/albu
 
 Generally Good Metadata, have APIs which I use:
 
-- Trakt - for <https://sean.fish/feed>
-- Discogs - for <https://sean.fish/s/albums> (my google sheet/SQL system using discogs metadata)
+- Trakt - for <https://purarue.xyz/feed>
+- Discogs - for <https://purarue.xyz/s/albums> (my google sheet/SQL system using discogs metadata)
 
 Generally good metadata:
 

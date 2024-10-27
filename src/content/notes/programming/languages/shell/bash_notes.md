@@ -22,7 +22,7 @@ trap 'rm -f "$tf"' EXIT
 
 #### tty/scripting
 
-Its useful to check the response of the `tty` command when doing interactive scripts. I use it for my [`launch`](https://sean.fish/d/cross-platform/launch?dark) script. If I run `launch htop`. If I'm already in a terminal, it just launches `htop`, but if its being run from a keybind/in the background, it opens a new terminal and runs that as an argument.
+Its useful to check the response of the `tty` command when doing interactive scripts. I use it for my [`launch`](https://purarue.xyz/d/cross-platform/launch?dark) script. If I run `launch htop`. If I'm already in a terminal, it just launches `htop`, but if its being run from a keybind/in the background, it opens a new terminal and runs that as an argument.
 
 As an example, to prompt me to select something:
 
@@ -47,7 +47,7 @@ $ tty
 /dev/pts/9
 ```
 
-Note: may be some issues depending on how you've started your display server, see comments in my [`attached-to-terminal`](https://sean.fish/d/attached-to-terminal) script
+Note: may be some issues depending on how you've started your display server, see comments in my [`attached-to-terminal`](https://purarue.xyz/d/attached-to-terminal) script
 
 #### Auto expanding variable contents:
 
@@ -57,7 +57,7 @@ name=$'First\nLast'
 echo "$name" # receives one argument
 
 # weird printf trickery
-printf "%s" $name # auto expands to two arguments, only prints 'Sean'
+printf "%s" $name # auto expands to two arguments, only prints 'First'
 printf "%s %s" $name # printf receives two arguments
 
 # safest is to quote your variables
@@ -552,9 +552,9 @@ Removal from left edge:
 [ ~ ] $ echo ${HOME}
 /home/username/
 [ ~ ] $ echo ${HOME#*/}
-home/sean
+home/user
 [ ~ ] $ echo ${HOME##*/}
-sean
+user
 ```
 
 Reminder that `*` is the typical posix globbing, its matching zero or more of any character (`.*` in PCRE terms)

@@ -21,7 +21,7 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 - [Arch](https://wiki.archlinux.org/index.php/)
   - Window Manager: `i3-gaps` - not amazing but covers all my usecases and have everything configured nicely. `qtile` had some graphical issues for bad GUI apps, and I don't feel like messing up my `haskell` installation for `xmonad`
-  - [`i3lock`](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://sean.fish/d/lock-screen?redirect) caches pixelated version of screen to speed up start time. [Corresponding service file](https://sean.fish/d/lockscreen@.service?redirect) to lock my screen whenever my laptop suspends
+  - [`i3lock`](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://purarue.xyz/d/lock-screen?redirect) caches pixelated version of screen to speed up start time. [Corresponding service file](https://purarue.xyz/d/lockscreen@.service?redirect) to lock my screen whenever my laptop suspends
   - [`rofi`](https://github.com/davatorium/rofi) for launching applications and switching windows
   - [`dunst`](https://dunst-project.org/) for notifications, pretty normal configuration
   - [`autotiling`](https://github.com/nwg-piotr/autotiling) for automatic tiling
@@ -41,26 +41,26 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
   - [Sponsorblock](https://sponsor.ajay.app/) to skip ads in youtube videos
   - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader), so I can dark mode every website I visit. Does have considerable overhead, so I prefer finding CSS through stylus for websites I visit often
   - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads
-- I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?redirect)/display some HTML nicely in the terminal (e.g. in [rread](https://sean.fish/d/rread?dark))
+- I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://purarue.xyz/d/duck?redirect)/display some HTML nicely in the terminal (e.g. in [rread](https://purarue.xyz/d/rread?dark))
 
 ### General Workflow/Tools
 
 - Editor: nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/purarue/dotfiles/tree/master/.config/nvim), mostly in lua
 - Email [`neomutt`](https://github.com/neomutt/neomutt) for email, using [mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard) as a configuration layer to set it up
-- RSS: [`newsboat`](https://newsboat.org/) for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
+- RSS: [`newsboat`](https://newsboat.org/) for youtube/news/blogs. I have a [script](https://purarue.xyz/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://purarue.xyz/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
 - Backups:
   - [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
-  - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [small script](https://sean.fish/d/restic-backup?redirect) to help manage all of that
-- Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/purarue/full_todotxt) for adding todos. The TUI I wrote forces lets me enter a deadline using plain english and converts it to a datetime, so is nice for quick reminders. [todotxt-more](https://git.sr.ht/~proycon/todotxt-more) has some great addons as well
+  - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [small script](https://purarue.xyz/d/restic-backup?redirect) to help manage all of that
+- Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://purarue.xyz/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/purarue/full_todotxt) for adding todos. The TUI I wrote forces lets me enter a deadline using plain english and converts it to a datetime, so is nice for quick reminders. [todotxt-more](https://git.sr.ht/~proycon/todotxt-more) has some great addons as well
 - Calendar: [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/purarue/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
-- File Manager: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://sean.fish/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?redirect) (previewer)
+- File Manager: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://purarue.xyz/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://purarue.xyz/d/scope.sh?redirect) (previewer)
 - Task Scheduler: bash script ([`bgproc`](https://github.com/purarue/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/purarue/evry) tool to schedule tasks)
 
 ### Media
 
-- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/purarue/pura-utils/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
+- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/purarue/pura-utils/blob/main/shellscripts/list-music)/[`play-music`](https://purarue.xyz/d/play-music?dark) script from the terminal
 - Music:
-  - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://sean.fish/d/.config/beets/config.yaml?redirect)
+  - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://purarue.xyz/d/.config/beets/config.yaml?redirect)
   - my `bash` [terminal playlist manager](https://github.com/purarue/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
 - Images/Video:
   - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
@@ -90,7 +90,7 @@ Mine:
 Others:
 
 - [`datamash`](https://www.gnu.org/software/datamash/) to perform basic statistics on text files/STDIN
-- [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?redirect) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser. Also use [`draglastpic`](https://sean.fish/d/draglastpic) very often, which lets me drag the latest screenshot to some application
+- [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://purarue.xyz/d/dragon-sink?redirect) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser. Also use [`draglastpic`](https://purarue.xyz/d/draglastpic) very often, which lets me drag the latest screenshot to some application
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
 - [`entr`](https://eradman.com/entrproject/) for lots of small build scripts
 - [`eza`](https://github.com/eza-community/eza) aliased to `ls`
@@ -99,7 +99,7 @@ Others:
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
 - [`hyperfine`](https://github.com/sharkdp/hyperfine) to do benchmarks
 - [`pandoc`](https://pandoc.org/) to convert formats (lots of markdown -> html)
-- [`pygmentize`](https://pygments.org/docs/cmdline/) to convert text to HTML - [`text2html`](https://sean.fish/d/text2html?redirect)
+- [`pygmentize`](https://pygments.org/docs/cmdline/) to convert text to HTML - [`text2html`](https://purarue.xyz/d/text2html?redirect)
 - [`jq`](https://stedolan.github.io/jq/) to process json streams
 - [`oh-my-stars`](https://github.com/purarue/oh-my-stars) (my fork) to search github stars offline
 - [`vipe`](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
@@ -124,7 +124,7 @@ Others:
 - [`optipng`](http://optipng.sourceforge.net/) to compress PNG files
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
 - [`pup`](https://github.com/ericchiang/pup) to parse HTML on the command line
-- [`qr`](https://sean.fish/d/qr?redirect) ([`qrencode`](https://fukuchi.org/works/qrencode/)), to create QR images from command line
+- [`qr`](https://purarue.xyz/d/qr?redirect) ([`qrencode`](https://fukuchi.org/works/qrencode/)), to create QR images from command line
 - [`qrc`](https://github.com/fumiyas/qrc) to create QR codes in the terminal
 - [`readability`](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
 - [`screenkey`](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys

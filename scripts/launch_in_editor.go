@@ -5,7 +5,7 @@ package main
 //
 // this runs in the background on my machine on port 12593
 // and uses my 'launch' script to open the file in nvim
-// https://sean.fish/d/.local/scripts/cross-platform/launch?redirect
+// https://purarue.xyz/d/.local/scripts/cross-platform/launch?redirect
 
 import (
 	"flag"

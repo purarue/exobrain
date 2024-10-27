@@ -14,14 +14,14 @@ Setup the VM however with whatever you'd like. I've been a fan of debian on the 
 ```shell
 # my terminal doesn't have the best terminfo support out of the box; default to xterm-256color
 export TERM=xterm-256color
-adduser sean
-usermod -aG sudo sean
+adduser username
+usermod -aG sudo username
 ```
 
 If needed, create the `.ssh` directory with perms
 
 ```
-su - sean  # switch to user
+su - username  # switch to user
 cd
 chmod go-w ~/
 chmod 700 ~/.ssh
@@ -30,13 +30,13 @@ chmod 600 ~/.ssh/authorized_keys
 
 3. create a ssh key (`ssh-keygen -t rsa -b 4096 -o -a 100`) for connecting to the server, `ssh-copy-id` it up to the server
 
-`ssh-copy-id -i ~/.ssh/file sean@<ip-addr>`
+`ssh-copy-id -i ~/.ssh/file username@<ip-addr>`
 
 4. Add the block for the server to my `~/.ssh/config` file:
 
 ```
 Host vps
-  User sean
+  User username
   Hostname <server ip>
   IdentityFile ~/.ssh/private_key
 ```
@@ -174,7 +174,7 @@ sudo mv nginx nginx.disabled
 sudo mv fail2ban fail2ban.disabled
 ```
 
-12. Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my [https://www.sean.fish](https://www.sean.fish) to just [https://sean.fish](https://sean.fish). In `/etc/nginx/sites-available/default`:
+12. Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my [https://www.purarue.xyz](https://www.purarue.xyz) to just [https://purarue.xyz](https://purarue.xyz). In `/etc/nginx/sites-available/default`:
 
 ```shell
 # redirect from HTTP to HTTPS
@@ -188,27 +188,27 @@ server {
 # redirect from www to non-www URL
 server {
   listen 443 ssl;
-  server_name www.sean.fish;
-  ssl_certificate /etc/letsencrypt/live/sean.fish/fullchain.pem; # managed by Certbot
-  ssl_certificate_key /etc/letsencrypt/live/sean.fish/privkey.pem; # managed by Certbot
+  server_name www.purarue.xyz;
+  ssl_certificate /etc/letsencrypt/live/purarue.xyz/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/purarue.xyz/privkey.pem; # managed by Certbot
   include /etc/letsencrypt/options-ssl-nginx.conf;
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
-  rewrite ^/(.*) https://sean.fish/$1 permanent;
+  rewrite ^/(.*) https://purarue.xyz/$1 permanent;
 }
 
 server {
 
   listen [::]:443 ssl http2 ipv6only=on;
   listen 443 ssl;
-  ssl_certificate /etc/letsencrypt/live/sean.fish/fullchain.pem; # managed by Certbot
-  ssl_certificate_key /etc/letsencrypt/live/sean.fish/privkey.pem; # managed by Certbot
+  ssl_certificate /etc/letsencrypt/live/purarue.xyz/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/purarue.xyz/privkey.pem; # managed by Certbot
   include /etc/letsencrypt/options-ssl-nginx.conf;
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 	root /var/www/html;
 	index index.html;
-	server_name sean.fish;
+	server_name purarue.xyz;
 
 # .... location blocks continued for different servers
 }
@@ -266,7 +266,7 @@ I use the [`go` module for nginx](https://learn.netdata.cloud/docs/agent/tutoria
 
 Both `netdata` and [`goaccess`](https://goaccess.io/) (nginx log parser) are password protected with `apache2-utils`'s `htpasswd`, which is setup in `vps_install`. To set it up:
 
-`sudo htpasswd -c /etc/nginx/.htpasswd sean`, and then on the routes:
+`sudo htpasswd -c /etc/nginx/.htpasswd username`, and then on the routes:
 
 ```
 location /logs {
