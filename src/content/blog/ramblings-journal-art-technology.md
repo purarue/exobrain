@@ -6,7 +6,7 @@ description: rambling
 
 This is quite of a messy post and I may continue to edit and improve it, but I wanted to sort of timestamp how I feel right now.
 
-If it feels like this post doesn't have a conclusion, its sort of because it doesn't. Its sort of a journal entry that I edited to make public, in hopes that maybe someone else gets something useful from any of my [inconsequential revelations](https://purarue.xyz/x/journal/202407241210/) -- a collection of ideas of how I currently feel about using my time -- how I use understand my relationship to media, notes, journaling, and technology.
+If it feels like this post doesn't have a conclusion, its sort of because it doesn't. Its sort of a journal entry that I edited to make public, in hopes that maybe someone else gets something useful from any of my [inconsequential revelations](https://purarue.xyz/x/journal/202407241210/) -- a collection of ideas of how I currently feel about using my time -- how I use understand my relationship to collecting/scraping data from websites, media, notes, journaling, and technology.
 
 ---
 
