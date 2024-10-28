@@ -10,7 +10,7 @@ If it feels like this post doesn't have a conclusion, its sort of because it doe
 
 ---
 
-In the last year or so, I've had this minor internal conflict pretty regularly around the [quantified-self-adjacent](https://www.reddit.com/r/quantifiedself/) projects [I've written](https://sean.fish/projects/). This was what I did all the time from 2019-2022, mostly writing tools that scrape/parse GDPR exports and combine it into a unified stream ([HPI](https://github.com/purarue/HPI))
+In the last year or so, I've had this minor internal conflict pretty regularly around the [quantified-self-adjacent](https://www.reddit.com/r/quantifiedself/) projects [I've written](https://purarue.xyz/projects/). This was what I did all the time from 2019-2022, mostly writing tools that scrape/parse GDPR exports and combine it into a unified stream ([HPI](https://github.com/purarue/HPI))
 
 At the time, I didn't have many strong philosophical ideas about the use of technology. In fact, I was apathetic about most things.
 
