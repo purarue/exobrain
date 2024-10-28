@@ -10,3 +10,11 @@ export default function url_for(path: string): string {
   }
   return join(import.meta.env.BASE_URL, path);
 }
+
+export function journal_url(slug: string | undefined): string | undefined {
+  if (slug !== undefined) {
+    return url_for(`journal/${slug}/`);
+  } else {
+    return undefined;
+  }
+}

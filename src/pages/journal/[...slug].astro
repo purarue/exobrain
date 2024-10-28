@@ -21,14 +21,17 @@ export async function getStaticPaths() {
 	const posts = (await getCollection("journal")).sort((a, b) => {
 		return a.data.date > b.data.date ? -1 : 1;
 	});
-	return linked(posts).map((data: Linked<CollectionEntry<"journal">>) => ({
-		params: { slug: data.cur.slug },
-		props: {
+	return linked(posts).map((data: Linked<CollectionEntry<"journal">>) => {
+		const props: Props = {
 			...data.cur,
 			prev_slug: data.prev?.slug,
 			next_slug: data.next?.slug,
-		},
-	}));
+		};
+		return {
+			params: { slug: data.cur.slug },
+			props,
+		};
+	});
 }
 type PropsBase = CollectionEntry<"journal">;
 type Props = PropsBase & {
@@ -43,8 +46,8 @@ const { Content } = await post.render();
 <Journal
 	{...post.data}
 	editor_slug={post.slug}
-	prev_slug={post.prev_slug}
-	next_slug={post.next_slug}
+	prev_slug={post.prev_slug ?? undefined}
+	next_slug={post.next_slug ?? undefined}
 >
 	{
 		post.data.audio && (

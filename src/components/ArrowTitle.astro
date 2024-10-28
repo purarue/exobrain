@@ -1,0 +1,28 @@
+---
+interface Props {
+	prev: string | undefined;
+	next: string | undefined;
+	text: string;
+	url_func: (_: string | undefined) => string | undefined;
+}
+
+const { prev, next, text, url_func } = Astro.props;
+---
+
+<style>
+	.title {
+		margin-bottom: 1em;
+		padding-bottom: 0.25em;
+		line-height: 1;
+	}
+	.title h5 {
+		margin: 0 0 0.5em 0;
+	}
+</style>
+<div class="title">
+	<h5>
+		{prev && <a href={url_func(prev)}>⬅</a>}
+		{text}
+		{next && <a href={url_func(next)}>➡</a>}
+	</h5>
+</div>

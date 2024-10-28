@@ -2,8 +2,9 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import ArrowTitle from "../components/ArrowTitle.astro";
 import { journalDate } from "../helpers/date";
-import url_for from "../helpers/url";
+import url_for, { journal_url } from "../helpers/url";
 import urljoin from "../helpers/join";
 
 type PropsBase = CollectionEntry<"journal">["data"];
@@ -34,14 +35,6 @@ const dateFmt = journalDate(date);
 				padding: 1em;
 				color: rgb(var(--offwhite));
 			}
-			.title {
-				margin-bottom: 1em;
-				padding-bottom: 0.25em;
-				line-height: 1;
-			}
-			.title h5 {
-				margin: 0 0 0.5em 0;
-			}
 		</style>
 	</head>
 
@@ -50,13 +43,13 @@ const dateFmt = journalDate(date);
 		<main>
 			<article data-slug={urljoin("journal", editor_slug)}>
 				<div class="prose">
-					<div class="title">
-						<h5>
-							{prev_slug && <a href={url_for(`journal/${prev_slug}/`)}>⬅</a>}
-							{dateFmt}
-							{next_slug && <a href={url_for(`journal/${next_slug}/`)}>➡</a>
-						</h5>
-					</div>
+					<ArrowTitle
+						next={next_slug}
+						prev={prev_slug}
+						text={dateFmt}
+						url_func={journal_url}
+					/>
+					<br />
 					<slot />
 				</div>
 			</article>
