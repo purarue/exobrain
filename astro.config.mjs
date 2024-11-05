@@ -2,35 +2,34 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 // https://docs.astro.build/en/guides/integrations-guide/sitemap/
 import sitemap from "@astrojs/sitemap";
-import urljoin from "./src/helpers/join";
 import { loadEnv } from "vite";
 
 // load config-specfic env vars
 import Compress from "astro-compress";
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 const isProd = import.meta.env.PROD;
-let base = env.BASE || "/";
-let site = env.SITE || "https://purarue.xyz";
+let fullUrl = env.BASE || "https://purarue.xyz/x";
 let port = env.PORT || "4321";
+
+const base = new URL(fullUrl).pathname;
 
 // force localhost if not prod
 if (!isProd) {
-  site = `http://localhost:${port}`;
+  fullUrl = `http://localhost:${port}${base}`;
 }
-const url = urljoin(site, base);
 console.log({
-  base,
-  url,
+  site: fullUrl,
   isProd,
 });
 
 // https://astro.build/config
 export default defineConfig({
-  site: url,
+  site: fullUrl,
   prefetch: {
     defaultStrategy: "hover",
     prefetchAll: true, // on hover, pre fetch site links
   },
+  // this gets exposed as import.meta.env.BASE_URL
   base: base,
   trailingSlash: "ignore",
   integrations: [
