@@ -44,30 +44,12 @@ I do think I find a lot of happiness and satisfaction in being able to combine a
 
 And to say the obvious, being proactive with backing up data from every major site I use and having multiple backups (using [`restic`](https://restic.net/)) means that when companies stopped storing my history (or [my browser database became full](https://github.com/purarue/browserexport/)), or I switched computers, I was still able to get find things I read or watched 7 years ago that otherwise I might've lost forever.
 
-Similarly, though I might watch some of the [journaling/self-improvement](https://www.youtube.com/@ParkerNotes) content, I feel like they're mostly just repackaging the same couple dozen ideas (riveting conclusions, I know...).
-
-I would still highly recommend journaling with a physical notebook. It sounds cliche, but forcing myself to not be on technology all the time, especially when I was just trying to think my own thoughts feels like it gave me way more clarity about what I actually felt. I've had three ways of capturing journal entries that I still use all the time, depending on what feels like the least amount of friction/most useful:
+I would still highly recommend journaling with a physical notebook. It sounds cliche, but forcing myself to not be on technology all the time - especially when I was just trying to think _my own thoughts_ - feels like it gave me way more clarity about what I actually felt. I've had three ways of capturing journal entries that I still use all the time, depending on what feels like the least amount of friction/most useful:
 
 - Write with my [fountain pen](https://us-shop.lamy.com/en_us/lamy-safari) in my little notebook
 - recording myself with my phone (with a few post-processing scripts using a [whisper script](https://github.com/Irvingouj/auto-subtitle) to get subtitles so they're a bit more searchable)
-- notes I would type out on my computer in a directory:
-
-```bash
-journal-new () {
-        local target
-        cd "${XDG_DOCUMENTS_DIR}/Notes/journal" || return
-        target="$(date "+%Y-%m-%d").md"
-        if [[ ! -f "$target" ]] then
-            {
-                    date
-                    printf '\n\n'
-            } > "$target"
-        fi
-        editor "$target"
-}
-```
+- with a [script](https://gist.github.com/purarue/bf1e82b29e87eb0bb3b88898e735deb5) that just opens a new text file on my laptop
 
 ... and I guess that's the end of the post. I suppose I'll end it with a quote:
 
 It's the age of mass-produced entertainment. Just as you demand food that's delicious, I hope you'll choose entertainment that has wisdom and passion... You can choose [art] for the characters, or for the technique. See as many foreign and experimental films as you can. Some entertainment is very slick, but its empty. Some of it is made without any attention to detail. We don't need rules about what's good and what isn't. That's something for each of you to decide. But I hope you'll be discriminating consumers. - [Joy in Motion](https://letterboxd.com/film/yasuo-otsukas-joy-in-motion/), Yasuo Otsuka
-
