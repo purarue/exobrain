@@ -11,6 +11,7 @@ const isProd = import.meta.env.PROD;
 let fullUrl = env.BASE || "https://purarue.xyz/x";
 let port = env.PORT || "4321";
 
+// is probably '/x'
 const base = new URL(fullUrl).pathname;
 
 // force localhost if not prod

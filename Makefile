@@ -1,4 +1,4 @@
-SOURCE_FILES := $(shell find ./src ./public -type f)
+SOURCE_FILES := $(shell find ./src ./public -type f ! -iname '*syncthing*')
 PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_photos_exist.py scripts/journal-public
 
 ##############
@@ -101,7 +101,7 @@ sync_on_server: built
 
 # typically done on my laptop
 sync_to_server:
-	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
+	rsync -Pahz --exclude=.stfolder --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
 	@ echo "Synced to server" | boxes
 
 # done on the server
