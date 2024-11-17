@@ -1,5 +1,5 @@
 ---
-title: Tools, or how I do everything
+title: Tools
 ---
 
 This describes a lot of the tools I use in my [`dotfiles`](https://github.com/purarue/dotfiles)
