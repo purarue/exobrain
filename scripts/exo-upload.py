@@ -236,11 +236,14 @@ IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
 ImageType = Literal[tuple(IMAGE_TYPES.keys())]  # type: ignore[valid-type]
 
 
-def iter_img_tags() -> Iterator[str]:
+def image_tags() -> List[str]:
     from common import get_field_from_markdown_file
 
-    emitted = set()
-    for image_info in iter_image_infos():
+    found = []
+    # sort by most recent, so the default is the most recently used tag
+    infos = list(iter_image_infos())
+    infos.sort(key=lambda i: Path(i.md_path).name, reverse=True)
+    for image_info in infos:
         # bleh, messy, parse the yaml from the frontmatter
         # TODO: could just parse the frontmatter using a lib
         tags_raw = get_field_from_markdown_file(Path(image_info.md_path), "tags")
@@ -248,10 +251,10 @@ def iter_img_tags() -> Iterator[str]:
             yml = yaml.load(io.StringIO(tags_raw), Loader=yaml.SafeLoader)
             if yml and isinstance(yml, list):
                 for t in yml:
-                    if t in emitted:
+                    if t in found:
                         continue
-                    emitted.add(t)
-                    yield t
+                    found.append(t)
+    return found
 
 
 class Metadata(NamedTuple):
@@ -261,7 +264,7 @@ class Metadata(NamedTuple):
     @staticmethod
     def attr_use_values() -> Dict[str, Any]:
         def _fzf_prompt() -> List[str]:
-            chosen: List[str] = fzf.prompt(list(iter_img_tags()), "--multi")
+            chosen: List[str] = fzf.prompt(image_tags(), "--multi", "--prompt='Tags> '")
             if not chosen:
                 if click.confirm("Add new tag?", default=False):
                     return [click.prompt("Tag", type=str, default="")]

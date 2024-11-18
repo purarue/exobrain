@@ -11,7 +11,7 @@ def unstring(s: str) -> str:
 def get_field_from_markdown_file(file: Path, field: str) -> str:
     for line in file.open("r"):
         if line.startswith(field):
-            return line.split(":", maxsplit=1)[1].strip()
+            return unstring(line.split(":", maxsplit=1)[1].strip())
     else:
         raise RuntimeError(f"No {field} in {file}")
 
