@@ -246,7 +246,7 @@ def iter_img_tags() -> Iterator[str]:
         tags_raw = get_field_from_markdown_file(Path(image_info.md_path), "tags")
         if tags_raw.strip():
             yml = yaml.load(io.StringIO(tags_raw), Loader=yaml.SafeLoader)
-            if yml:
+            if yml and isinstance(yml, list):
                 for t in yml:
                     if t in emitted:
                         continue
