@@ -5,6 +5,7 @@ This script takes an image, and creates thumbnails and metadata
 """
 
 import os
+import io
 import sys
 import json
 import subprocess
@@ -13,8 +14,10 @@ import tempfile
 
 from pathlib import Path
 from typing import (
+    Dict,
     NamedTuple,
     Literal,
+    Any,
     assert_never,
     get_args,
     Generator,
@@ -28,10 +31,15 @@ from datetime import datetime
 from dataclasses import dataclass
 from contextlib import contextmanager
 
+import yaml
 import click
 import exifread  # type: ignore[import]
 import autotui.namedtuple_prompt
 from PIL import Image
+
+from pyfzf import FzfPrompt
+
+fzf = FzfPrompt()
 
 base_dir = Path(__file__).resolve().parent.parent
 content_dir = base_dir / "src" / "content"
@@ -228,9 +236,39 @@ IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
 ImageType = Literal[tuple(IMAGE_TYPES.keys())]  # type: ignore[valid-type]
 
 
+def iter_img_tags() -> Iterator[str]:
+    from common import get_field_from_markdown_file
+
+    emitted = set()
+    for image_info in iter_image_infos():
+        # bleh, messy, parse the yaml from the frontmatter
+        # TODO: could just parse the frontmatter using a lib
+        tags_raw = get_field_from_markdown_file(Path(image_info.md_path), "tags")
+        if tags_raw.strip():
+            yml = yaml.load(io.StringIO(tags_raw), Loader=yaml.SafeLoader)
+            if yml:
+                for t in yml:
+                    if t in emitted:
+                        continue
+                    emitted.add(t)
+                    yield t
+
+
 class Metadata(NamedTuple):
     tags: Optional[List[str]]
     caption: Optional[str]
+
+    @staticmethod
+    def attr_use_values() -> Dict[str, Any]:
+        def _fzf_prompt() -> List[str]:
+            chosen: List[str] = fzf.prompt(list(iter_img_tags()), "--multi")
+            if not chosen:
+                if click.confirm("Add new tag?", default=False):
+                    return [click.prompt("Tag", type=str, default="")]
+            assert isinstance(chosen, list)
+            return chosen
+
+        return {"tags": lambda: _fzf_prompt()}
 
 
 @main.command(short_help="upload an image")
@@ -274,13 +312,13 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
 
     # prompt to confirm date
     # remove all private metadata
-    # optional tags (TODO: parse other known tags as options?)
+    # optional tags
     # create thumbnail
     # copy full image
     # create markdown file with metadata which astro collection parses
 
     creation_date: datetime = file.taken_at()
-    if not click.confirm(f"Confirm {creation_date}", default=False):
+    if not click.confirm(f"Confirm {creation_date}", default=True):
         click.secho("Aborting...")
         sys.exit(1)
 
