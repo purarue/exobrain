@@ -89,6 +89,7 @@ Mine:
 
 Others:
 
+- [`abook`](https://abook.sourceforge.io/) as an addressbook, because of its nice integration with neomutt
 - [`datamash`](https://www.gnu.org/software/datamash/) to perform basic statistics on text files/STDIN
 - [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://purarue.xyz/d/dragon-sink?redirect) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser. Also use [`draglastpic`](https://purarue.xyz/d/draglastpic) very often, which lets me drag the latest screenshot to some application
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
