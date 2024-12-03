@@ -1,15 +1,6 @@
 ---
 title: Diffview
 ---
----
-title: Diffview
----
----
-title: Diffview
----
----
-title: Diffview
----
 
 Not really sure I fully understand this yet, but following:
 
