@@ -4,8 +4,9 @@ title: Quotes
 
 In no order, importance or subject
 
+- Society grows great when old men plant trees whose shade they know they shall never sit in. - Old Greek Proverb
 - Be kind to people, be ruthless to systems. - Micheal Brooks
-- There are only two kinds of \[programming\] languages: the ones people complain about and the ones nobody uses." - Bjarne Stroustrup
+- There are only two kinds of \[programming\] languages: the ones people complain about and the ones nobody uses. - Bjarne Stroustrup
 - Can't you [gain cultural understanding and appreciation] by reading history? One may ask. Yes, but history written by whom, for whom? Because, you see, after learning a language, if you care enough, part of you becomes a member of the tribe to which the language belongs. And that cultural schizophrenia can be truly excruciating - <https://www.youtube.com/watch?v=ZZ_4gzoDDAE>
 - You cannot escape structures of power, you can only turn a blind eye to understanding them. - [Rules for Rulers](https://www.youtube.com/watch?v=rStL7niR7gs), CGP Grey
 - And yet, Miyazaki wrote in 1995, "I am like him" -- a man of contradictions: a filmmaker who condemns the proliferation of images even as he contributes to it; an artist who has devoted his career to children but was rarely home to take care of his own; an environmentalist who can't bear to give up his cigarettes or wheezing car; a professed Luddite who revels in the mechanics of modern vehicles but tries "not to draw them in a fashion that further feeds an infatuation with power," as he has written; a pacifist who loves warplanes; a brooder with a dark view of how civilization has squandered the gifts of the planet, who nevertheless makes films that affirm the urgency of human life. - [Hayao Miyazaki Prepares to Cast One Last Spell](https://www.nytimes.com/2021/11/23/t-magazine/hayao-miyazaki-studio-ghibli.html), Ligaya Mishan
