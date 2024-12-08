@@ -1,20 +1,21 @@
 from pathlib import Path
+from typing import Any
+
+from frontmatter import parse  # type: ignore[import]
 
 
-def unstring(s: str) -> str:
-    for seps in ("'", '"'):
-        if s.startswith(seps) and s.endswith(seps):
-            return s[1:-1]
-    return s
+def parse_frontmatter(file: Path) -> dict[str, Any]:
+    data, _ = parse(file.read_text())
+    assert isinstance(data, dict)
+    return data
 
 
-def get_field_from_markdown_file(file: Path, field: str) -> str:
-    for line in file.open("r"):
-        if line.startswith(field):
-            return unstring(line.split(":", maxsplit=1)[1].strip())
-    else:
-        raise RuntimeError(f"No {field} in {file}")
+def get_field_from_markdown_file(file: Path, field: str) -> Any:
+    return parse_frontmatter(file)[field]
 
 
 def get_img_from_markdown_file(file: Path) -> str:
-    return get_field_from_markdown_file(file, "image")
+    field = get_field_from_markdown_file(file, "image")
+    if not isinstance(field, str):
+        raise RuntimeError(f"Invalid image in {file}")
+    return field

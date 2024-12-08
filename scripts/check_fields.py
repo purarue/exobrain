@@ -11,9 +11,14 @@ content_dir = base_dir / "src" / "content"
 public_dir = base_dir / "public"
 
 
-@click.command()
+@click.group()
+def main() -> None:
+    pass
+
+
+@main.command()
 @click.option("-v", "--verbose", is_flag=True, default=False)
-def main(verbose: bool) -> None:
+def photos(verbose: bool) -> None:
     for mtype in ("photography", "art"):
         for p in (content_dir / mtype).glob("*.md"):
             if verbose:

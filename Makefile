@@ -1,5 +1,5 @@
 SOURCE_FILES := $(shell find ./src ./public -type f ! -iname '*syncthing*')
-PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_photos_exist.py scripts/journal-public
+PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_fields.py scripts/journal-public
 
 ##############
 #            #
@@ -8,7 +8,7 @@ PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/
 ##############
 
 ./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES)
-	npm run build || (npm install && npm run build)
+	npm run build
 	uglifycss ./dist/global.css --output ./dist/global.css
 
 # if the sitemap is newer than all the source files, site is considered 'built'
@@ -38,8 +38,8 @@ spell:
 check:
 	python3 ./scripts/check_conflicting_dirs.py ./src/content
 
-images:
-	python3 ./scripts/check_photos_exist.py
+frontmatter:
+	python3 ./scripts/check_fields.py photos
 
 mypy:
 	find $(PYTHON_FILES) -exec mypy --install-types {} \;
@@ -47,7 +47,7 @@ mypy:
 flake8:
 	find $(PYTHON_FILES) -exec flake8 {} +;
 
-lint: check images spell mypy flake8
+lint: check frontmatter spell mypy flake8
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
