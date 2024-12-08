@@ -19,19 +19,20 @@ def main() -> None:
 @main.command()
 @click.option("-v", "--verbose", is_flag=True, default=False)
 def photos(verbose: bool) -> None:
+    def verbose_print(msg: str) -> None:
+        if verbose:
+            click.echo(msg, err=True)
+
     for mtype in ("photography", "art"):
         for p in (content_dir / mtype).glob("*.md"):
-            if verbose:
-                click.echo(f"Checking content: {p}", err=True)
+            verbose_print(f"Checking content: {p}")
             img = get_img_from_markdown_file(p)
-            if verbose:
-                click.echo(f"Extracted image: {img}", err=True)
+            verbose_print(f"Image: {img}")
             for subdir in ("full", "thumbs"):
                 f = public_dir / mtype / subdir / img
-                if verbose:
-                    click.echo(f"Checking file: {f}", err=True)
+                verbose_print(f"Checking file: {f}")
                 if not f.exists():
-                    raise RuntimeError(f"Missing {f}")
+                    raise RuntimeError(f"Missing {f}, referenced in {p}")
 
 
 if __name__ == "__main__":
