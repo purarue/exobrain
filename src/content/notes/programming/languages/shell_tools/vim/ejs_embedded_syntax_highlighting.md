@@ -1,5 +1,5 @@
 ---
-ttle: EJS Treesitter Syntax Highlighting in Neovim
+title: EJS Treesitter Syntax Highlighting in Neovim
 ---
 
 [Ejs](https://ejs.co/#features) is an embedded javascript templating language.
