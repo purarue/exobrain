@@ -2,7 +2,7 @@
 title: time / programming / media / notes / journaling / technology
 pubDate: 2024/10/27
 description: rambling
-updatedDate: 2024/11/16
+updatedDate: 2024/12/09
 ---
 
 This is quite of a messy post and I may continue to edit and improve it, but I wanted to sort of timestamp how I feel right now.
@@ -29,7 +29,7 @@ I think the glorification of 'efficiency' ruined my ability to enjoy things for 
 
 Before falling into this rabbit hole, I used to spend a lot of time archiving/organizing data for media databases (see [anime/databases](/x/notes/media/anime/databases/)). I still have [some of those projects running](https://purarue.xyz/dbsentinel/), continually archiving deleted/denied database entries for posterity.
 
-In retrospect, one might argue the years of my life binging anime and dissosiating were me wasting my youth away (and sure, it is partly true), but it gave me a online social circle when I had nothing, and I think it was useful for me to get into something that was incredibly niche ([weird, arthouse short films](https://myanimelist.net/stacks/610)). It gave me an opportunity to understand my relationship to media without outside influence (because no one else was writing or talking about these films). It taught me to be intentional with my time, and always be considering what is actually bringing me joy or teaching me something and what is just noise.
+In retrospect, one might argue the years of my life binging anime and dissociating were me wasting my youth away (and sure, it is partly true), but it gave me a online social circle when I had nothing, and I think it was useful for me to get into something that was incredibly niche ([weird, arthouse short films](https://myanimelist.net/stacks/610)). It gave me an opportunity to understand my relationship to media without outside influence (because no one else was writing or talking about these films). It taught me to be intentional with my time, and always be considering what is actually bringing me joy or teaching me something and what is just noise.
 
 I think exposing myself to that much media, animation, and film also just let me find things that really spoke to me, and changed my life for the better. The same themes or messages are probably present in books or film as well, but anime was the medium I attached myself to at the time. I'm glad I was able to find media that [meant a lot to me](https://purarue.xyz/feed?order_by=score&sort=desc&ftype=anime%2Calbum), because generally positive and humanistic messages often acted as shields against my own apathy, and just inspired me to be better in my own relationships with others.
 
@@ -54,3 +54,23 @@ I would still highly recommend journaling with a physical notebook. It sounds cl
 ... and I guess that's the end of the post. I suppose I'll end it with a quote:
 
 It's the age of mass-produced entertainment. Just as you demand food that's delicious, I hope you'll choose entertainment that has wisdom and passion... You can choose [art] for the characters, or for the technique. See as many foreign and experimental films as you can. Some entertainment is very slick, but its empty. Some of it is made without any attention to detail. We don't need rules about what's good and what isn't. That's something for each of you to decide. But I hope you'll be discriminating consumers. - [Joy in Motion](https://letterboxd.com/film/yasuo-otsukas-joy-in-motion/), Yasuo Otsuka
+
+---
+
+### Addendum
+
+I thought I would add a bit of a revelation I've now internalized regarding this post after I linked this to [`@karlicoss`](https://github.com/karlicoss).
+
+One of the obvious reasons that I had not considered as to why I back up/collect all this data on myself but I don't "use" it as often, is that:
+
+- collecting the data from a website/service is a programming problem. Its a puzzle to solve - a concrete goal that has a definite end - one which gives me a hit of dopamine when I do so.
+- analyzing and deciding how to use it is a human behavioural analysis problem:
+  - what kind of data do I need to inform accurate decisions?
+  - how much does personal bias play into this?
+  - what kind of science or psychology exist about this subject?
+
+That is a much more complicated problem because it involves my goals, desires, time, and is heavily biased, as I am a sample size of 1.
+
+It does mean that when I do make measurable goals I have access to more data, but I am still weary of me self-selecting data. In my subjective experience, personal reflection (with my journal or talking with friends), while keeping track of mid/long term goals over longer span of time works much better for my brain. Whenever I've experimented with trying to improve my behaviour using data in the short term, I end up with too many false positives and end up with [alarm fatigue](https://en.wikipedia.org/wiki/Alarm_fatigue).
+
+A nice middle ground I've found that does work for me is my [`reminder-sink`](https://github.com/seanbreckenridge/reminder-sink) tool, which does remind me of things I should be doing, but its much less obtrusive in my day to day life.
