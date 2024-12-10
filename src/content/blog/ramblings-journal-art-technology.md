@@ -59,7 +59,7 @@ It's the age of mass-produced entertainment. Just as you demand food that's deli
 
 ### Addendum
 
-I thought I would add a bit of a revelation I've now internalized regarding this post after I linked this to [`@karlicoss`](https://github.com/karlicoss).
+I thought I would add a bit of a revelation I've now internalized regarding this post after I discussed this blog post with [`@karlicoss`](https://github.com/karlicoss).
 
 One of the obvious reasons that I had not considered as to why I back up/collect all this data on myself but I don't "use" it as often, is that:
 
