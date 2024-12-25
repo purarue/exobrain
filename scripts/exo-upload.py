@@ -244,16 +244,12 @@ def image_tags() -> List[str]:
     infos = list(iter_image_infos())
     infos.sort(key=lambda i: Path(i.md_path).name, reverse=True)
     for image_info in infos:
-        # bleh, messy, parse the yaml from the frontmatter
-        # TODO: could just parse the frontmatter using a lib
         tags_raw = get_field_from_markdown_file(Path(image_info.md_path), "tags")
-        if tags_raw.strip():
-            yml = yaml.load(io.StringIO(tags_raw), Loader=yaml.SafeLoader)
-            if yml and isinstance(yml, list):
-                for t in yml:
-                    if t in found:
-                        continue
-                    found.append(t)
+        assert isinstance(tags_raw, list)
+        for t in tags_raw:
+            if t in found:
+                continue
+            found.append(t)
     return found
 
 
@@ -278,13 +274,18 @@ class Metadata(NamedTuple):
 @click.option(
     "-t", "--type", "image_type", type=click.Choice(get_args(ImageType)), required=True
 )
-@click.argument("PATH", type=click.Path(exists=True, path_type=Path))
+@click.argument("PATH", type=click.Path(path_type=Path))
 def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     """
     Upload an image to the public directory
 
     Removes metadata, generates a thumbnail and prompts for metadata
     """
+    path = path.absolute()
+    if not path.exists():
+        click.secho(f"Missing path: {path}", fg="red")
+        sys.exit(1)
+
     for cmd in ["exiftool", "mogrify", "rifle"]:
         if shutil.which(cmd) is None:
             click.secho(f"Missing required command '{cmd}'", fg="red")
