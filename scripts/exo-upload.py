@@ -5,7 +5,6 @@ This script takes an image, and creates thumbnails and metadata
 """
 
 import os
-import io
 import sys
 import json
 import subprocess
@@ -31,7 +30,6 @@ from datetime import datetime
 from dataclasses import dataclass
 from contextlib import contextmanager
 
-import yaml
 import click
 import exifread  # type: ignore[import]
 import autotui.namedtuple_prompt

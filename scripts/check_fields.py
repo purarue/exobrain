@@ -27,6 +27,7 @@ def photos(verbose: bool) -> None:
         for p in (content_dir / mtype).glob("*.md"):
             verbose_print(f"Checking content: {p}")
             img = get_img_from_markdown_file(p)
+            assert isinstance(img, str)
             verbose_print(f"Image: {img}")
             for subdir in ("full", "thumbs"):
                 f = public_dir / mtype / subdir / img
