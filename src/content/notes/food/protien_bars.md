@@ -12,17 +12,22 @@ Ideally, Id get something with 15-20g of protien, some amount of fibre, no sugar
 
 here are ones Ive tested:
 
-- pretty good:
-  - aloha bars (these use monkfruit)
-    - chocolate mint
-    - peanut butter chocolate chip (6/10, 3g saturated fat, a bit too sweet and has milk)
-    - peanut butter cup
-    - chocolate fudge brownie
-    - chocolate chip cookie dough
-    - vanilla almond crunch (4/10, not enough flavor)
-    - chocolate caramel pecan (5/10, too sweet)
-    - lemon cashew (5/10, not enough lemon)
-    - coconut chocolate (7/10 tastes good, but 7g of saturated fat)
+good:
+
+- (costco) kirkland signature protien bars (21g protien, 10g fiber, 2g sugar, 2g sugar alcohol) - these are pretty much the most decent one which I've found that isn't very expensive, and isn't full of sugar. Only downside is that it has milk, and I'm lactose intolerant (the cookie dough ones are fine, the chocolate ones I have to take a lactose pill with else I feel a bit sick)
+
+pretty good:
+
+- aloha bars (these use monkfruit)
+  - chocolate mint
+  - peanut butter chocolate chip (6/10, 3g saturated fat, a bit too sweet and has milk)
+  - peanut butter cup
+  - chocolate fudge brownie
+  - chocolate chip cookie dough
+  - vanilla almond crunch (4/10, not enough flavor)
+  - chocolate caramel pecan (5/10, too sweet)
+  - lemon cashew (5/10, not enough lemon)
+  - coconut chocolate (7/10 tastes good, but 7g of saturated fat)
 
 good-ish, but not something I love:
 
@@ -44,3 +49,13 @@ not enough protien:
 ones Im not going to try:
 
 - clif builders - these have way too much sugar/saturated fat for me
+
+to try:
+
+- jimmyjoy
+- macro
+- thatsitfruit
+- huel
+- soylent
+- mealsquares
+- osm bar
