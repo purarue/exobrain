@@ -47,7 +47,7 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 - Editor: nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/purarue/dotfiles/tree/master/.config/nvim), mostly in lua
 - Email [`neomutt`](https://github.com/neomutt/neomutt) for email, using [mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard) as a configuration layer to set it up
-- RSS: [`newsboat`](https://newsboat.org/) for youtube/news/blogs. I have a [script](https://purarue.xyz/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://purarue.xyz/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
+- RSS: [`newsraft`](https://codeberg.org/grisha/newsraft) for youtube/news/blogs. I have a [script](https://purarue.xyz/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://purarue.xyz/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
 - Backups:
   - [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
   - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [small script](https://purarue.xyz/d/restic-backup?redirect) to help manage all of that
