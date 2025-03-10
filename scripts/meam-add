@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory
+
+import os
+import time
+
+from typing import NamedTuple
+from pathlib import Path
+import click
+
+from autotui.shortcuts import prompt_namedtuple
+
+
+class Song(NamedTuple):
+    song_name: str
+    url: str
+    estimated_year: int
+    memory: str
+
+
+this_dir = Path(os.path.dirname(__file__))
+content_dir = (this_dir / ".." / "src" / "content" / "meams").absolute()
+assert content_dir.exists()
+
+
+@click.command()
+def main() -> None:
+    ts = int(time.time())
+    nt = prompt_namedtuple(Song)
+
+    data = f"""---
+name: {nt.song_name}
+url: {nt.url}
+estimated_year: {nt.estimated_year}
+---
+
+{nt.memory}
+"""
+
+    (content_dir / f"{ts}.md").write_text(data)
+
+
+if __name__ == "__main__":
+    main()

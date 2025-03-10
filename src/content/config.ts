@@ -57,4 +57,14 @@ const art = defineCollection({
   }),
 });
 
-export const collections = { blog, notes, journal, photography, art };
+// music evoked autobiographical memory
+const meam = defineCollection({
+  type: "content",
+  schema: z.object({
+    name: z.string(),
+    url: z.string(),
+    estimated_year: z.number(),
+  }),
+});
+
+export const collections = { blog, notes, journal, photography, art, meam };
