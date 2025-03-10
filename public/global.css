@@ -12,17 +12,18 @@
   --gray-light: 230, 230, 230;
   --gray-very-dark: 20, 20, 20;
   --offwhite: 244, 244, 244;
-  --box-shadow: 0 2px 6px rgb(var(--gray), 25%),
-    0 8px 24px rgb(var(--gray), 33%), 0 16px 32px rgb(var(--gray), 33%);
+  --box-shadow:
+    0 2px 6px rgb(var(--gray), 25%), 0 8px 24px rgb(var(--gray), 33%),
+    0 16px 32px rgb(var(--gray), 33%);
 }
 body {
   /* just give me some monospace font, I dont want to load my own...
    * try to use some nicer fonts people might have installed */
-  font-family: "Fira Code Mono", "Iosevka Mono", "Source Code Pro",
-    "JetBrains Mono", "Droid Sans Mono", "Andale Mono", "Lucida Console",
-    "Monaco", "Consolas", "Liberation Mono", "DejaVu Sans Mono",
-    "Bitstream Vera Sans Mono", "Nimbus Mono L", "IBM Plex Mono", "Roboto Mono",
-    "Courier New", monospace;
+  font-family:
+    "Fira Code Mono", "Iosevka Mono", "Source Code Pro", "JetBrains Mono",
+    "Droid Sans Mono", "Andale Mono", "Lucida Console", "Monaco", "Consolas",
+    "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Nimbus Mono L", "IBM Plex Mono", "Roboto Mono", "Courier New", monospace;
   margin: 0;
   padding: 0;
   text-align: left;

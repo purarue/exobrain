@@ -3,11 +3,10 @@
 
 import os
 import time
-
 from typing import NamedTuple
 from pathlib import Path
-import click
 
+import click
 from autotui.shortcuts import prompt_namedtuple
 
 
@@ -19,16 +18,25 @@ class Song(NamedTuple):
 
 
 this_dir = Path(os.path.dirname(__file__))
-content_dir = (this_dir / ".." / "src" / "content" / "meams").absolute()
+content_dir = (this_dir / ".." / "src" / "content" / "meams").absolute().resolve()
 assert content_dir.exists()
+
+
+def edit_in_vim() -> str:
+    m = click.edit(text=None, editor="nvim")
+    if m is None:
+        raise click.Abort("No text entered")
+    return m.strip()
 
 
 @click.command()
 def main() -> None:
-    ts = int(time.time())
-    nt = prompt_namedtuple(Song)
+    target = content_dir / f"{int(time.time())}.md"
+    nt = prompt_namedtuple(Song, attr_use_values={"memory": edit_in_vim})
 
-    data = f"""---
+    assert not target.exists()
+    target.write_text(
+        f"""---
 name: {nt.song_name}
 url: {nt.url}
 estimated_year: {nt.estimated_year}
@@ -36,8 +44,8 @@ estimated_year: {nt.estimated_year}
 
 {nt.memory}
 """
-
-    (content_dir / f"{ts}.md").write_text(data)
+    )
+    click.echo(f"Created {target}")
 
 
 if __name__ == "__main__":
