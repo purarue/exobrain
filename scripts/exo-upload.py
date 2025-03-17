@@ -204,7 +204,8 @@ thumbnail_width: {thumb_w}
 thumbnail_height: {thumb_h}
 full_width: {full_w}
 full_height: {full_h}
----"""
+---
+"""
         metadata_file = self.content_metadata_dir() / (
             str(int(datetime.now().timestamp())) + ".md"
         )
