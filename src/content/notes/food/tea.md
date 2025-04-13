@@ -29,5 +29,5 @@ Growing up in India used to drink this all the time. This is the recipe I've lan
 - [optional] full or ground cloves
 
 1. put all of the above in a pot of cold water on the stove on high till its boiling
-1. then put it tea (I use english breakfast) and wait till its whatever strength you want
+1. once water looks a bit cloudy/spices are infused, add tea (I use english breakfast) and wait a few minutes till its whatever strength you want
 1. add milk and sugar to make it chai, if you want
