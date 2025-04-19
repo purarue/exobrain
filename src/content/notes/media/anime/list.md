@@ -91,7 +91,7 @@ It is very possible that in the fugue state of trying dozens of anime per day, I
 
 After the 2020 debacles of MAL being down all the time, I decided it would probably be a good idea to have a backup.
 
-I tried migrating to anilist, but it would crash the importer since it was too large to be embedded in the request...
+I tried migrating to anilist, but it would [crash the importer](https://anilist.co/forum/thread/33798) since it was too large to be embedded in the request...
 
 Since a bunch of entries we're not "real" anyways (dropped for raws/subs, or by relation because I dropped a prequel), I [wrote a script](https://github.com/purarue/malexport/blob/master/scripts/to_anilist.py) to filter my MAL list before importing it into AniList:
 
