@@ -79,13 +79,15 @@ Not really, but I don't think it was pointless. I did [find](https://myanimelist
 
 > I think it was useful for me to get into something that was incredibly niche (weird, arthouse short films). It gave me an opportunity to understand my relationship to media without outside influence (because no one else was writing or talking about these films). It taught me to be intentional with my time, and always be considering what is actually bringing me joy or teaching me something and what is just noise.
 
-Do I think, _you_, person following me on AniList should use my list as a litmus test for whether or not you should watch something?
+Do I think, _you_, person following me on MAL/AniList should use my list as a litmus test for whether or not you should watch something?
 
-If you want to, I guess. I never consider something dropped forever, most of my drops were snap judgements made in under 10 minutes to figure out if something appealed to me.
+If I watched more than one episode of the show before dropping it, then maybe? Otherwise probably not.
+
+I never consider something dropped forever, most of my drops were snap judgements made in under 10 minutes to figure out if something appealed to me.
 
 It is very possible that in the fugue state of trying dozens of anime per day, I judged too early and dropped something without giving it a fair chance. It's also possible that if I tried some of the anime I dropped again now -- 7 years later -- I would have a different opinion than I did as a 19 year old.
 
-### Move to AniList
+### The Move to AniList
 
 After the 2020 debacles of MAL being down all the time, I decided it would probably be a good idea to have a backup.
 
