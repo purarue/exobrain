@@ -26,9 +26,7 @@ Completed Movies over an hour long                                       230  17
 Completed OVA series                                                     148  17.40 days        6.06
 Completed with a total runtime under 30 minutes                         4981  21.22 days        3.75
 Completed music videos                                                  2482  6.76 days         3.73
-On hold                                                                  260  Left: 73.51 days  5.92
 Dropped I actually watched some of                                      4006  42.14 days        3.57
-Dropped Donghua I watched some of                                        199  0.98 days         3.83
 Dropped for categorization reasons (sequel, no raws/subs available)    14098  -                 -
 ```
 
