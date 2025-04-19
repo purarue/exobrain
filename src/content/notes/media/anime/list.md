@@ -107,7 +107,7 @@ Probably the most confusing to explain reason, but [I run an archival tool](http
 
 One of the strategies it uses to find deleted MAL entries uses my MyAnimeList XML export -- if there are any entries that used to be in my export but aren't anymore, it requests those and checks if they have been deleted from MAL.
 
-In order for that to work, my list has to have every database entry on it. So, every few days I run a script that puts every entry that is not currently on my list, onto my list. That is why there are currently 1964 items on my currently watching -- I am not actually 1964 anime, they just need to be on my list so my archival tool can continue to work.
+In order for that to work, my list has to have every database entry on it. So, every few days I run a script that puts every entry that is not currently on my list, onto my list. That is why there are currently 1964 items on my currently watching -- I am not actually currently watching 1964 anime (shocker), they just need to be on my list so my archival tool can continue to work.
 
 ---
 
