@@ -63,7 +63,7 @@ Which then got me curious to try other years, so I'd just pick a year (1975-2020
 - Drop anything without subs or raws available
 - And then try the first episode, or about the first 20 minutes of every movie from that year.
 
-After a few years of this (around the 2017-2019 period), I had done this for almost every year of anime. I don't think I had ever categorized everything, but at one point I had about 100 shows left to try in the entire database, everything else I had either:
+After a few years of this (around the 2017-2019 period), I had done this for almost every year of anime. I don't think I had ever categorized everything, but at one point I had about 75 entries left to try in the entire database, everything else I had either:
 
 - Dropped for categorization reasons (which is about half of my list right now (14,098/29,289))
 - Tried some of and dropped it, as it didn't grab my attention
