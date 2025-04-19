@@ -103,11 +103,11 @@ During 2022-2024ish, whenever I would watch an episode I would mark it on both M
 
 ### Database Archival
 
-Probably the most confusing to explain reason, but [I wrote and continually run an archival tool](https://purarue.xyz/dbsentinel/) which saves data from denied and deleted MAL entries, for the couple dozen power users that find that information useful (also see [the reasons listed on that page](https://purarue.xyz/dbsentinel/))
+Probably the most confusing to explain reason, but [I run an archival tool](https://purarue.xyz/dbsentinel/) which saves data from denied and deleted MAL entries (to explain why, see [the reasons listed on that page](https://purarue.xyz/dbsentinel/))
 
-One of the strategies it uses to find deleted entries uses my MAL list, and if there are any entries that used to be on my list but aren't anymore, it requests those and checks if they no longer exist.
+One of the strategies it uses to find deleted MAL entries uses my MyAnimeList XML export -- if there are any entries that used to be in my export but aren't anymore, it requests those and checks if they have been deleted from MAL.
 
-However, in order for that to work, my list has to have every database entry on it. So, every few days I run a script that puts every entry that is not currently on my list, on my list. That is why there are currently 1964 items on my currently watching -- I am not actually watching those, they just need to be on my list so my archival tool can continue to work.
+In order for that to work, my list has to have every database entry on it. So, every few days I run a script that puts every entry that is not currently on my list, onto my list. That is why there are currently 1964 items on my currently watching -- I am not actually 1964 anime, they just need to be on my list so my archival tool can continue to work.
 
 ---
 
