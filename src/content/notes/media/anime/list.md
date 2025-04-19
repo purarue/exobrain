@@ -32,9 +32,9 @@ Dropped Donghua I watched some of                                        199  0.
 Dropped for categorization reasons (sequel, no raws/subs available)    14098  -                 -
 ```
 
-Over the past 10 years of watching anime, I've seen 448 TV shows and 230 movies (which feels like a quite normal amount of anime to have seen, if you've been entrenched in the anime community for 10 years). The vast majority of my completed counts comes from watching random short films under 30 minutes (short films, commercials, music videos, college graduation films)
+Over the past 10 years of watching anime, I've seen 448 TV shows and 230 movies (which feels like a quite normal amount of anime to have seen, if you've been entrenched in the anime community for 10 years). The vast majority of my completed counts comes from watching random short anime under 30 minutes (short films, commercials, music videos, college graduation films)
 
-The reason my list looks the way it does, is for a couple reasons:
+There are a couple reasons my list looks the way it does, but its mostly:
 
 ### Shorts, Categorization, and Sunk Cost
 
