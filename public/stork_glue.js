@@ -1,27 +1,37 @@
 // this is loaded in the header of the site,
 // it sets up the search bar using stork
-const wrapper = document.querySelector(".stork-wrapper-dark");
-stork.register("search", wrapper.dataset.indexUrl);
-const si = document.querySelector(".stork-input");
-toggleSearch = () => {
-  if (wrapper.classList.contains("hide")) {
-    wrapper.classList.remove("hide");
-    si.focus();
-  } else {
-    wrapper.classList.add("hide");
+(() => {
+  const wrapper = document.querySelector(".stork-wrapper-dark");
+  if (!wrapper) {
+    console.error("Stork wrapper not found");
+    return;
   }
-};
-document.querySelector(".search-icon").addEventListener("click", toggleSearch);
-// check the URL for 'search' GET arg
-// if its there, open the search bar
-const url = new URL(window.location.href);
-if (url.searchParams.get("search") !== null) {
-  toggleSearch();
-}
-// if user hits Ctrl+K, open the search bar
-document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.key === "k") {
+  const storkUrl = wrapper.dataset.indexUrl;
+  if (typeof storkUrl !== "string") {
+    console.error("Stork URL not found");
+  }
+  stork.register("search", storkUrl);
+  const si = document.querySelector(".stork-input");
+  const toggleSearch = () => {
+    if (wrapper.classList.contains("hide")) {
+      wrapper.classList.remove("hide");
+      si.focus();
+    } else {
+      wrapper.classList.add("hide");
+    }
+  };
+  document.querySelector(".search-icon").addEventListener("click", toggleSearch);
+  // check the URL for 'search' GET arg
+  // if its there, open the search bar
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("search") !== null) {
     toggleSearch();
-    e.preventDefault();
   }
-});
+  // if user hits Ctrl+K, open the search bar
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key === "k") {
+      toggleSearch();
+      e.preventDefault();
+    }
+  });
+})();
