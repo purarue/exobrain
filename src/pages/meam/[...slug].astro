@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 	const posts = (await getCollection("meam")).sort((a, b) => {
 		return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
 	});
-	return linked(posts).map((data: Linked<CollectionEntry<"meam">>) => {
+	return linked({ posts }).map((data: Linked<CollectionEntry<"meam">>) => {
 		const props: Props = {
 			...data.cur,
 			prev_slug: data.prev?.slug,

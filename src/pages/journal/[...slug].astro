@@ -11,32 +11,32 @@ export type Linked<T> = {
 
 
 // correctly handle prev/next if some are unlisted
-export function linked<T>(arr: T[], isPublic?: (t: T | undefined) => boolean): Linked<T>[] {
+export function linked<T>({ posts, isPublic }: { posts: T[], isPublic?: (t: T | undefined) => boolean }): Linked<T>[] {
 	const res: Linked<T>[] = [];
 	let prev = undefined;
 	let next = undefined;
-	for (let i = 0; i < arr.length; i++) {
+	for (let i = 0; i < posts.length; i++) {
 		next = undefined;
-		for (let j = i + 1; j < arr.length; j++) {
+		for (let j = i + 1; j < posts.length; j++) {
 			if (isPublic !== undefined) {
 				// if public, and this is public, use it
-				if (isPublic(arr[j])) {
-					next = arr[j];
+				if (isPublic(posts[j])) {
+					next = posts[j];
 					break
 				}
 			} else {
 				// if no function to determine visibility, use everything
-				next = arr[j];
+				next = posts[j];
 				break
 			}
 		}
-		res.push({ prev, cur: arr[i]!, next });
+		res.push({ prev, cur: posts[i]!, next });
 		if (isPublic !== undefined) {
-			if (isPublic(arr[i])) {
-				prev = arr[i];
+			if (isPublic(posts[i])) {
+				prev = posts[i];
 			}
 		} else {
-			prev = arr[i];
+			prev = posts[i];
 		}
 	}
 	return res;
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 		}
 		return p.data.unlisted === false
 	}
-	return linked(posts, isPublic).map((data: Linked<CollectionEntry<"journal">>) => {
+	return linked({ posts, isPublic }).map((data: Linked<CollectionEntry<"journal">>) => {
 		const props: Props = {
 			...data.cur,
 			prev_slug: data.prev?.slug,

@@ -5,7 +5,9 @@ import url_for from '../../helpers/url';
 
 type Post = CollectionEntry<'meam'>;
 
-const posts: Post[] = (await getCollection('meam')).sort((a, b) => {
+const posts: Post[] = (await getCollection('meam'))
+.filter((a) => a.data.unlisted === false)
+.sort((a, b) => {
 	return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
 });
 

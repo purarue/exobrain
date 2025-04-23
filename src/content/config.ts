@@ -77,6 +77,7 @@ const meam = defineCollection({
     name: z.string().transform(toNameObject),
     url: z.string(),
     estimated_year: z.number(),
+    unlisted: z.boolean().optional().default(false),
   }),
 });
 

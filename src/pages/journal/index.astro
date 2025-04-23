@@ -6,9 +6,11 @@ import { journalDate } from '../../helpers/date';
 
 type Post = CollectionEntry<'journal'>;
 
-const posts: Post[] = (await getCollection('journal')).filter((a) => a.data.unlisted === false).sort((a, b) => {
-	return a.data.date > b.data.date ? -1 : 1;
-});
+const posts: Post[] = (await getCollection('journal'))
+	.filter((a) => a.data.unlisted === false)
+	.sort((a, b) => {
+		return a.data.date > b.data.date ? -1 : 1;
+	});
 
 ---
 
