@@ -3,16 +3,41 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Journal from "../../layouts/Journal.astro";
 import url_for from "../../helpers/url";
 
-type Linked<T> = {
+export type Linked<T> = {
 	prev: T | undefined;
 	cur: T;
 	next: T | undefined;
 };
 
-export function linked<T>(arr: T[]): Linked<T>[] {
+
+// correctly handle prev/next if some are unlisted
+export function linked<T>(arr: T[], isPublic?: (t: T | undefined) => boolean): Linked<T>[] {
 	const res: Linked<T>[] = [];
+	let prev = undefined;
+	let next = undefined;
 	for (let i = 0; i < arr.length; i++) {
-		res.push({ prev: arr[i - 1], cur: arr[i]!, next: arr[i + 1] });
+		next = undefined;
+		for (let j = i + 1; j < arr.length; j++) {
+			if (isPublic !== undefined) {
+				// if public, and this is public, use it
+				if (isPublic(arr[j])) {
+					next = arr[j];
+					break
+				}
+			} else {
+				// if no function to determine visibility, use everything
+				next = arr[j];
+				break
+			}
+		}
+		res.push({ prev, cur: arr[i]!, next });
+		if (isPublic !== undefined) {
+			if (isPublic(arr[i])) {
+				prev = arr[i];
+			}
+		} else {
+			prev = arr[i];
+		}
 	}
 	return res;
 }
@@ -21,7 +46,15 @@ export async function getStaticPaths() {
 	const posts = (await getCollection("journal")).sort((a, b) => {
 		return a.data.date > b.data.date ? -1 : 1;
 	});
-	return linked(posts).map((data: Linked<CollectionEntry<"journal">>) => {
+
+	// skips unlisted items in navigation
+	const isPublic = (p: CollectionEntry<"journal"> | undefined) => {
+		if (p === undefined) {
+			return false
+		}
+		return p.data.unlisted === false
+	}
+	return linked(posts, isPublic).map((data: Linked<CollectionEntry<"journal">>) => {
 		const props: Props = {
 			...data.cur,
 			prev_slug: data.prev?.slug,

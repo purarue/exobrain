@@ -1,20 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Meam from "../../layouts/Meam.astro";
-
-type Linked<T> = {
-	prev: T | undefined;
-	cur: T;
-	next: T | undefined;
-};
-
-export function linked<T>(arr: T[]): Linked<T>[] {
-	const res: Linked<T>[] = [];
-	for (let i = 0; i < arr.length; i++) {
-		res.push({ prev: arr[i - 1], cur: arr[i]!, next: arr[i + 1] });
-	}
-	return res;
-}
+import { linked, type Linked } from "../journal/[...slug].astro";
 
 export async function getStaticPaths() {
 	const posts = (await getCollection("meam")).sort((a, b) => {
