@@ -37,7 +37,7 @@ export function transform_youtube_url(url: string): string {
   const v = new URL(url).searchParams.get("v");
   const base = new URL(url).origin;
   if (v !== null) {
-    return `https://www.youtube.com/embed/${v}?autoplay=1&origin=${base}`;
+    return `https://www.youtube.com/embed/${v}?&origin=${base}`;
   } else {
     throw Error(`No video id in url ${url}`);
   }
