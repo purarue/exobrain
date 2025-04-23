@@ -51,7 +51,7 @@ const combined = `${name.title} - ${name.artist}`
 					<h5>~ {estimated_year} ~</h5>
 					<br />
 					<slot />
-					<iframe id="ytplayer" width="640" height="360" src={transform_youtube_url(youtube_url)}></iframe>
+					<iframe allow="autoplay" id="ytplayer" width="640" height="360" src={transform_youtube_url(youtube_url)}></iframe>
 				</div>
 			</article>
 		</main>

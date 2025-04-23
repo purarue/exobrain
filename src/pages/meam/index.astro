@@ -57,7 +57,7 @@ const posts: Post[] = (await getCollection('meam')).sort((a, b) => {
 			{posts.map((line) => (
 				<li>
 					<a href={url_for(`meam/${line.slug}/`)}>
-					{line.data.estimated_year} - {line.data.name.title} - {line.data.name.artist}
+					{line.data.estimated_year} | {line.data.name.title} - {line.data.name.artist}
 					</a>
 			</li>
 			))}
