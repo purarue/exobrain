@@ -19,7 +19,7 @@ const combined = `${name.title} - ${name.artist}`
 
 <html lang="en">
 	<head>
-		<BaseHead title={`Meam | ${combined}`} description={`Music evoked autobiographical memory for ${combined}`} />
+		<BaseHead title={`MEAM | ${combined}`} description={`Music Evoked Autobiographical Memory for ${combined}`} />
 		<script src={url_for("launch_in_editor.js")} defer is:inline></script>
 		<style>
 			main {
@@ -51,7 +51,7 @@ const combined = `${name.title} - ${name.artist}`
 						text={combined}
 						url_func={meam_url}
 					/>
-					<h5>~ {estimated_year} ~</h5>
+					<h6>~{estimated_year}</h6>
 					<br />
 					<slot />
 					<iframe id="ytplayer" width="640" height="360" src={transform_youtube_url(youtube_url)}></iframe>
