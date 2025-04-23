@@ -9,9 +9,6 @@ const posts: Post[] = (await getCollection('meam')).sort((a, b) => {
 	return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
 });
 
-console.log(posts)
-console.log(posts.length)
-
 ---
 
 <Base title="MEAMs" description="music evoked autobiographic memories" disableFooter={true}>
@@ -51,9 +48,11 @@ console.log(posts.length)
 				font-size: 1.25rem;
 			}
 		}
-	</style>
-	<section>
+		</style>
+	<p>
 		A [MEAM](https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory) is a Music Evoked Autobiographical Memory. Whenever I one of these songs, I am transported back to a certain place/memory.
+	</p>
+	<section>
 		<ul>
 			{posts.map((line) => (
 				<li>
