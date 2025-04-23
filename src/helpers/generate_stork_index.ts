@@ -23,6 +23,7 @@ async function generateStorkIndex() {
     (post) => !post.slug.startsWith("personal/"),
   );
   const journal = await getCollection("journal");
+  const meams = await getCollection("meam");
 
   const files = [];
 
@@ -54,10 +55,28 @@ async function generateStorkIndex() {
     if (!okayFile(j.id)) {
       continue;
     }
+    if (j.data.unlisted === true) {
+      continue;
+    }
     files.push({
       title: journalDate(j.data.date),
       url: url_for(`journal/${j.slug}/`),
       path: path.join(process.cwd(), "./src/content/journal", j.id),
+      filetype: "Markdown",
+    });
+  }
+
+  for (const m of meams) {
+    if (!okayFile(m.id)) {
+      continue;
+    }
+    if (m.data.unlisted === true) {
+      continue;
+    }
+    files.push({
+      title: `${m.data.estimated_year} | ${m.data.name.title} - ${m.data.name.artist}`,
+      url: url_for(`meam/${m.slug}/`),
+      path: path.join(process.cwd(), "./src/content/meam", m.id),
       filetype: "Markdown",
     });
   }

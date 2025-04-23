@@ -42,6 +42,9 @@ const combined = `${name.title} - ${name.artist}`
 		<main>
 			<article data-slug={urljoin("meam", editor_slug)}>
 				<div class="prose">
+					<p>
+						<a href={url_for("meam/")}>⬅ MEAMs</a>
+					</p>
 					<ArrowTitle
 						next={next_slug}
 						prev={prev_slug}
