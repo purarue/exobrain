@@ -10,6 +10,20 @@ export type Linked<T> = {
 };
 
 
+interface EntryWithUnlisted {
+	 data: {
+    unlisted: boolean
+  }
+}
+
+// if something is unlisted should not be displayed in pages/prev/next buttons
+export const isNotUnlisted = (p: EntryWithUnlisted | undefined): boolean => {
+		if (p === undefined) {
+			return false
+		}
+		return p.data.unlisted === false
+}
+
 // correctly handle prev/next if some are unlisted
 export function linked<T>({ posts, isPublic }: { posts: T[], isPublic?: (t: T | undefined) => boolean }): Linked<T>[] {
 	const res: Linked<T>[] = [];
@@ -47,14 +61,7 @@ export async function getStaticPaths() {
 		return a.data.date > b.data.date ? -1 : 1;
 	});
 
-	// skips unlisted items in navigation
-	const isPublic = (p: CollectionEntry<"journal"> | undefined) => {
-		if (p === undefined) {
-			return false
-		}
-		return p.data.unlisted === false
-	}
-	return linked({ posts, isPublic }).map((data: Linked<CollectionEntry<"journal">>) => {
+	return linked({ posts, isPublic: isNotUnlisted }).map((data: Linked<CollectionEntry<"journal">>) => {
 		const props: Props = {
 			...data.cur,
 			prev_slug: data.prev?.slug,
