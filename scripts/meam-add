@@ -18,7 +18,7 @@ class Song(NamedTuple):
 
 
 this_dir = Path(os.path.dirname(__file__))
-content_dir = (this_dir / ".." / "src" / "content" / "meams").absolute().resolve()
+content_dir = (this_dir / ".." / "src" / "content" / "meam").absolute().resolve()
 assert content_dir.exists()
 
 
