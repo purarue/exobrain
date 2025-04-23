@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import url_for from '../../helpers/url';
+
+type Post = CollectionEntry<'meam'>;
+
+const posts: Post[] = (await getCollection('meam')).sort((a, b) => {
+	return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
+});
+
+console.log(posts)
+console.log(posts.length)
+
+---
+
+<Base title="MEAMs" description="music evoked autobiographic memories" disableFooter={true}>
+	<style>
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			gap: 1rem;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul li * {
+			text-decoration: none;
+			transition: 0.2s ease;
+		}
+		.title {
+			margin: 0;
+			color: rgb(var(--offwhite));
+			line-height: 1;
+		}
+		ul li a:hover h4 {
+			color: rgb(var(--accent));
+		}
+		/* reduce font size if screen is small */
+		@media (max-width: 768px) {
+			main {
+				width: 100%;
+			}
+			.title {
+				font-size: 1.75rem;
+			}
+		}
+		@media (max-width: 500px) {
+			.title {
+				font-size: 1.25rem;
+			}
+		}
+	</style>
+	<section>
+		A [MEAM](https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory) is a Music Evoked Autobiographical Memory. Whenever I one of these songs, I am transported back to a certain place/memory.
+		<ul>
+			{posts.map((line) => (
+				<li>
+					<a href={url_for(`meam/${line.slug}/`)}>
+					{line.data.name.title} - {line.data.name.artist}
+					</a>
+			</li>
+			))}
+		</ul>
+	</section>
+</Base>

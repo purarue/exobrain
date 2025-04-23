@@ -1,0 +1,52 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Meam from "../../layouts/Meam.astro";
+
+type Linked<T> = {
+	prev: T | undefined;
+	cur: T;
+	next: T | undefined;
+};
+
+export function linked<T>(arr: T[]): Linked<T>[] {
+	const res: Linked<T>[] = [];
+	for (let i = 0; i < arr.length; i++) {
+		res.push({ prev: arr[i - 1], cur: arr[i]!, next: arr[i + 1] });
+	}
+	return res;
+}
+
+export async function getStaticPaths() {
+	const posts = (await getCollection("meam")).sort((a, b) => {
+		return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
+	});
+	return linked(posts).map((data: Linked<CollectionEntry<"meam">>) => {
+		const props: Props = {
+			...data.cur,
+			prev_slug: data.prev?.slug,
+			next_slug: data.next?.slug,
+		};
+		return {
+			params: { slug: data.cur.slug },
+			props,
+		};
+	});
+}
+type PropsBase = CollectionEntry<"meam">;
+type Props = PropsBase & {
+	prev_slug: string | undefined;
+	next_slug: string | undefined;
+};
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Meam
+	{...post.data}
+	editor_slug={post.slug}
+	prev_slug={post.prev_slug ?? undefined}
+	next_slug={post.next_slug ?? undefined}
+>
+	<Content />
+</Meam>

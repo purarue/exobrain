@@ -57,11 +57,23 @@ const art = defineCollection({
   }),
 });
 
+function toNameObject(name: string): { title: string; artist: string } {
+  const [title, artist] = name.split("|");
+  if (!title) {
+    throw new Error(`Invalid name: ${name}`);
+  }
+  if (!artist) {
+    throw new Error(`Invalid artist: ${name}`);
+  }
+  return { title, artist };
+}
+
 // music evoked autobiographical memory
 const meam = defineCollection({
   type: "content",
   schema: z.object({
-    name: z.string(),
+    // split by | into name/artist
+    name: z.string().transform(toNameObject),
     url: z.string(),
     estimated_year: z.number(),
   }),

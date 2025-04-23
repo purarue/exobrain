@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import ArrowTitle from "../components/ArrowTitle.astro";
+import url_for, { meam_url, transform_youtube_url } from "../helpers/url";
+import urljoin from "../helpers/join";
+
+type PropsBase = CollectionEntry<"meam">["data"];
+export interface Props extends PropsBase {
+	editor_slug: string;
+	prev_slug: string | undefined;
+	next_slug: string | undefined;
+}
+
+const { estimated_year, name, url: youtube_url, editor_slug, prev_slug, next_slug } = Astro.props;
+const combined = `${name.title} - ${name.artist}`
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={`Meam | ${combined}`} description={`Music evoked autobiographical memory for ${combined}`} />
+		<script src={url_for("launch_in_editor.js")} defer is:inline></script>
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.prose {
+				width: 1440px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--offwhite));
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article data-slug={urljoin("meams", editor_slug)}>
+				<div class="prose">
+					<ArrowTitle
+						next={next_slug}
+						prev={prev_slug}
+						text={combined}
+						url_func={meam_url}
+					/>
+					<h5>~ {estimated_year} ~</h5>
+					<br />
+					<slot />
+					<iframe id="ytplayer" width="640" height="360" src={transform_youtube_url(youtube_url)}></iframe>
+				</div>
+			</article>
+		</main>
+	</body>
+</html>
