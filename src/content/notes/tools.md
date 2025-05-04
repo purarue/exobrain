@@ -111,16 +111,17 @@ Others:
 ### Other CLI Tools I use less often
 
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
-- [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code files
 - [`chafa`](https://github.com/hpjansson/chafa/) to print gifs in terminal
-- [`dex`](https://github.com/jceb/dex) to open `.desktop` files
+- [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code files
 - [`delta`](https://github.com/dandavison/delta), for nicer git diffs in the terminal
+- [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`figlet`](http://www.figlet.org/) to print large letters
 - [`gron`](https://github.com/tomnomnom/gron) when I can't be bothered to use `jq`
+- [`ix`](https://github.com/purarue/pura-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
 - [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
-- [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
 - [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
 - [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
+- [`moby`](https://github.com/words/moby) as a thesaurus
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
 - [`optipng`](http://optipng.sourceforge.net/) to compress PNG files
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
@@ -134,9 +135,8 @@ Others:
 - [`sqleton`](https://github.com/inukshuk/sqleton) to visualize sqlite databases
 - [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
 - [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
+- [`udiskie`](https://github.com/coldfix/udiskie), to mount drives/USBs
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
-- [`moby`](https://github.com/words/moby) as a thesaurus
-- [`ix`](https://github.com/purarue/pura-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
 
 ### Other GUI Applications I use less often
 
