@@ -100,3 +100,12 @@ If you *REALLY* didn't want grain but wanted to keep the same shutter speed to p
 ---
 
 - ambient light - how bright the outside world is
+
+## for headshots
+
+use higher aperture (f/8+) - prevents any blurry edges
+something like 85-100 mm lens
+
+if outside and you want to do a portrait shot, you can purposefully use a low aperture and zoom in if using a zoom lens to add bokeh, that way the background is blurred
+
+I dont think I'll be using key/fill lights anytime soon, but maybe just one ring/strong light from above, a 45 degree angle down pointing at the top of the face for the eyes
