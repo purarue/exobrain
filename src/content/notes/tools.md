@@ -32,7 +32,7 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 ### Browsers
 
-- [`firefox-developer-edition`](https://www.mozilla.org/en-US/firefox/developer/), with extensions:
+- [`floorp`](https://floorp.app/) (a firefox-fork) with extensions:
   - [`vimium-ff`](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
   - [`RES`](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days
   - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix
@@ -63,7 +63,7 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
   - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://purarue.xyz/d/.config/beets/config.yaml?redirect)
   - my `bash` [terminal playlist manager](https://github.com/purarue/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
 - Images/Video:
-  - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
+  - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/), for tiny bits of markup/highlighting I might use [flameshot](https://flameshot.org/) or [gimp](https://www.gimp.org/).
   - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/purarue/pura-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
   - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
   - For trimming video, I use an [encode_webm](https://github.com/occivink/mpv-scripts/blob/master/script-opts/encode_webm.conf) keybinding in mpv
@@ -114,7 +114,7 @@ Others:
 - [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code files
 - [`chafa`](https://github.com/hpjansson/chafa/) to print gifs in terminal
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
-- [`dunk`](https://github.com/darrenburns/dunk), for nicer git diffs in the terminal
+- [`delta`](https://github.com/dandavison/delta), for nicer git diffs in the terminal
 - [`figlet`](http://www.figlet.org/) to print large letters
 - [`gron`](https://github.com/tomnomnom/gron) when I can't be bothered to use `jq`
 - [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
