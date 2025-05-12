@@ -7,6 +7,7 @@ In no order, importance or subject
 - Society grows great when old men plant trees whose shade they know they shall never sit in. - Old Greek Proverb
 - Be kind to people, be ruthless to systems. - Micheal Brooks
 - There are only two kinds of \[programming\] languages: the ones people complain about and the ones nobody uses. - Bjarne Stroustrup
+- [After getting the super mario bros. world record...](https://youtu.be/iqlUbLasZ-M?t=3230): So instead of saying something silly like - "I think it will be over very soon and its been a crazy ride", Im going to say that "this game will never be over, and the ride will only get crazier, and I am just participating in one small part of the middle of the ride, and there are many talented people who helped build the ride before me, and there will be many talented people who help finish off the ride after me". - Darbian
 - From [Against Nihlism - John Green](https://www.youtube.com/watch?v=YbyeApgIiBk)
   - "Nihilism, like all straightforward answers to life's great questions is inadequate..."
   - We make art, and other things, like sports, and cappucino and YouTube, that we don't technically need to survive, but still need... Now of course, none of this matters in the grand scheme of things, the sun is still going to turn into a red giant and boil our oceans away, but we don't live in the grand scheme of things.
