@@ -119,7 +119,6 @@ Others:
 - [`gron`](https://github.com/tomnomnom/gron) when I can't be bothered to use `jq`
 - [`ix`](https://github.com/purarue/pura-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
 - [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
-- [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
 - [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
 - [`moby`](https://github.com/words/moby) as a thesaurus
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
@@ -129,7 +128,6 @@ Others:
 - [`qr`](https://purarue.xyz/d/qr?redirect) ([`qrencode`](https://fukuchi.org/works/qrencode/)), to create QR images from command line
 - [`qrc`](https://github.com/fumiyas/qrc) to create QR codes in the terminal
 - [`readability`](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
-- [`screenkey`](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys
 - [`shellcheck`](https://github.com/koalaman/shellcheck) to check shell scripts for syntax errors
 - [`speedtest-cli`](https://github.com/sivel/speedtest-cli) to test internet bandwidth
 - [`sqleton`](https://github.com/inukshuk/sqleton) to visualize sqlite databases
