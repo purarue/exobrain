@@ -77,7 +77,7 @@ class BaseImageMixin:
     source: Path
     _tempfile: Path | None = None
 
-    THUMB_SIZE = 720
+    THUMB_SIZE = 1080
 
     @classmethod
     def content_metadata_dir(cls) -> Path:
