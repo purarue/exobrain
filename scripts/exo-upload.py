@@ -104,8 +104,8 @@ class BaseImageMixin:
                 date_obj = datetime.strptime(data, "%Y:%m:%d %H:%M:%S")
                 return date_obj.astimezone()
 
-        # use creation time
-        return datetime.fromtimestamp(self.source.stat().st_ctime)
+        # use mod time
+        return datetime.fromtimestamp(self.source.stat().st_mtime)
 
     @contextmanager
     def img(self) -> Generator[Image.Image, None, None]:
