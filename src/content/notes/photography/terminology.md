@@ -29,6 +29,7 @@ If there's nothing in the foreground, you can often get good sharpness on landsc
 These smaller impacts are not likely to ruin a photo, so if you need a small/large aperture for something, then use that.
 
 Rules (that you can break, if you want):
+
 - Low aperture (f/2.8) for bokeh (blurry out of focus backgrounds)
 - For street stuff, [f/8 and be there](https://www.youtube.com/watch?v=DQcFQ-2dtB0)
 - For landscape, f/11 is nice and leads to less aberrations
@@ -95,7 +96,7 @@ Instead of base ISO/doing this all yourself, you could also instead start on aut
 
 leaving ISO on auto so it exposes decently.
 
-If you *REALLY* didn't want grain but wanted to keep the same shutter speed to prevent blur, you could use a filter on top of your camera, like an ND filter which removes some of the light that enters the lens.
+If you _REALLY_ didn't want grain but wanted to keep the same shutter speed to prevent blur, you could use a filter on top of your camera, like an ND filter which removes some of the light that enters the lens.
 
 ---
 

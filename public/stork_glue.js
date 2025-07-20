@@ -20,7 +20,9 @@
       wrapper.classList.add("hide");
     }
   };
-  document.querySelector(".search-icon").addEventListener("click", toggleSearch);
+  document
+    .querySelector(".search-icon")
+    .addEventListener("click", toggleSearch);
   // check the URL for 'search' GET arg
   // if its there, open the search bar
   const params = new URLSearchParams(window.location.search);
