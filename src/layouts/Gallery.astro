@@ -16,9 +16,18 @@ const photos: Post[] = (await getCollection(mediaType)).sort((a, b) => {
 	return a.data.date > b.data.date ? -1 : 1;
 });
 
+
+const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+});
+
 function photoDate(date: Date) {
 	// format like YYYY/MM/DD
-	return date.toISOString().slice(0, 10);
+	const parts = formatter.format(date)
+	return `${parts[0]}/${parts[1]}/${parts[2]}`;
 }
 
 function capitalize(name: string | undefined): string {
