@@ -1,7 +1,7 @@
 ---
 title: "Devlog: Opam on Android"
 pubDate: 2023/09/17
-updatedDate: 2024/03/01
+updatedDate: 2025/07/30
 description: Getting opam to work on Android
 ---
 
@@ -12,7 +12,7 @@ A post describing my process of getting opam ([ocaml](https://ocaml.org/) packag
 Prereqs:
 
 ```
-pkg install rsync clang coreutils dash diffutils make nmap-ncat proot
+pkg install rsync clang coreutils dash diffutils make nmap proot
 ```
 
 - Install the [its-pointless community repo](https://wiki.termux.com/wiki/Package_Management)
@@ -50,8 +50,6 @@ Mine looks like:
 ```
 opam-version: "2.0"
 repositories: "default"
-installed-switches: ["5.0.0" "default"]
-switch: "5.0.0"
 jobs: 1
 download-jobs: 3
 eval-variables: [
@@ -65,7 +63,7 @@ default-compiler: [
 ]
 ```
 
-Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.0.0 --jobs=1`
+Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.3.0 --jobs=1`
 
 A then just wait a _while_ for it to build.
 
