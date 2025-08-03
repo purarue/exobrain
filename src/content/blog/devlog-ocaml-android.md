@@ -63,7 +63,7 @@ default-compiler: [
 ]
 ```
 
-Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.3.0 --jobs=1`
+Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.0.0 --jobs=1`
 
 A then just wait a _while_ for it to build.
 
