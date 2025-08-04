@@ -23,7 +23,7 @@ assert content_dir.exists()
 
 
 def edit_in_vim() -> str:
-    m = click.edit(text=None, editor="nvim")
+    m = click.edit(text="", editor="nvim")
     if m is None:
         raise click.Abort("No text entered")
     return m.strip()
