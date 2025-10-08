@@ -9,7 +9,7 @@ Here are my lists:
 - [MAL](https://myanimelist.net/profile/purplepinapples)
 - [AniList](https://anilist.co/user/purplepinapples/)
 
-As an image, to jumpscare:
+My MAL as I write this:
 
 ![](./images/stats_new.png)
 
