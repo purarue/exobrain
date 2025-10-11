@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/mdx": "^4.3.7",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@ltd/j-toml": "^1.38.0",
-    "astro": "^4.16.18",
+    "astro": "^5.14.4",
     "astro-compress": "^2.3.5",
     "typescript": "^5.6.3"
   },
