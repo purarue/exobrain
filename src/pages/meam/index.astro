@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import url_for from '../../helpers/url';
+import { meamTitle } from '../../helpers/meam';
 
 type Post = CollectionEntry<'meam'>;
 
@@ -59,7 +60,7 @@ const posts: Post[] = (await getCollection('meam'))
 			{posts.map((line) => (
 				<li>
 					<a href={url_for(`meam/${line.slug}/`)}>
-					{line.data.estimated_year} | {line.data.name.title} - {line.data.name.artist}
+					{meamTitle(line.data)}
 					</a>
 			</li>
 			))}

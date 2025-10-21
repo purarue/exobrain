@@ -1,6 +1,4 @@
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-// https://docs.astro.build/en/guides/integrations-guide/sitemap/
 import sitemap from "@astrojs/sitemap";
 import { loadEnv } from "vite";
 
@@ -34,7 +32,6 @@ export default defineConfig({
   base: base,
   trailingSlash: "ignore",
   integrations: [
-    mdx(),
     sitemap({
       filter: (page) => {
         if (page.includes("notes/personal")) {
