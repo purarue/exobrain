@@ -16,14 +16,14 @@ function okayFile(fileId: string) {
   return ok;
 }
 
-function collectionFiles<T extends object>({
+function collectionTOMLEntries<T extends object>({
   url_slug,
   items,
   title,
 }: {
   url_slug: string;
   items: { id: string; slug: string; data: T }[];
-  title: (item: { id: string; slug: string; data: T }) => string;
+  title: (data: T) => string;
 }) {
   const files = [];
   for (const item of items) {
@@ -35,7 +35,7 @@ function collectionFiles<T extends object>({
     }
     const cwd = process.cwd();
     files.push({
-      title: title(item),
+      title: title(item.data),
       url: url_for(`${url_slug}/${item.slug}`),
       path: path.join(cwd, `./src/content/${url_slug}`, item.id),
       filetype: "Markdown",
@@ -51,27 +51,27 @@ async function generateStorkIndex() {
     {
       input: {
         files: [
-          ...collectionFiles({
+          ...collectionTOMLEntries({
             items: await getCollection("blog"),
             url_slug: "blog",
-            title: (b) => b.data.title,
+            title: (bd) => bd.title,
           }),
-          ...collectionFiles({
+          ...collectionTOMLEntries({
             items: (await getCollection("notes")).filter(
               (post) => !post.slug.startsWith("personal/"),
             ),
             url_slug: "notes",
-            title: (p) => p.data.title,
+            title: (pd) => pd.title,
           }),
-          ...collectionFiles({
+          ...collectionTOMLEntries({
             items: await getCollection("journal"),
             url_slug: "journal",
-            title: (j) => journalDate(j.data.date),
+            title: (jd) => journalDate(jd.date),
           }),
-          ...collectionFiles({
+          ...collectionTOMLEntries({
             items: await getCollection("meam"),
             url_slug: "meam",
-            title: (m) => meamTitle(m.data),
+            title: (md) => meamTitle(md),
           }),
         ],
       },
