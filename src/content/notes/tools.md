@@ -20,12 +20,11 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 ### OS-stuff
 
 - [Arch](https://wiki.archlinux.org/index.php/)
-  - Window Manager: `i3-gaps` - not amazing but covers all my usecases and have everything configured nicely. `qtile` had some graphical issues for bad GUI apps, and I don't feel like messing up my `haskell` installation for `xmonad`
-  - [`i3lock`](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://purarue.xyz/d/lock-screen?redirect) caches pixelated version of screen to speed up start time. [Corresponding service file](https://purarue.xyz/d/lockscreen@.service?redirect) to lock my screen whenever my laptop suspends
+  - Window Manager: `sway`
   - [`rofi`](https://github.com/davatorium/rofi) for launching applications and switching windows
   - [`dunst`](https://dunst-project.org/) for notifications, pretty normal configuration
   - [`autotiling`](https://github.com/nwg-piotr/autotiling) for automatic tiling
-  - [`redshift`](http://jonls.dk/redshift/) to adjust color temperature
+  - [`gammastep`](https://gitlab.freedesktop.org/CameronNemo/gammastep) to adjust color temperature
 - Mac
   - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/purarue/pura-utils#script-index) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
 - Android (using [termux](https://termux.dev/en/))
