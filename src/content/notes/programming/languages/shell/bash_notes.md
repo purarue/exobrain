@@ -98,7 +98,7 @@ The last statement in a functions' return value is the return value of the funct
 #!/bin/bash
 
 setup() {
-  ls kdsajfksajfda
+  ls 'e$88D&x]O2M{#_wkB63C#@vf5rN.4G6L'
 }
 
 if setup; then
