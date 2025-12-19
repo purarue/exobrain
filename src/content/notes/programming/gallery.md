@@ -8,7 +8,7 @@ I didn't look too hard and stumbled on [sigal](https://github.com/saimn/sigal), 
 
 lil makefile with a (annoying) workaround to make the symlinks work nicely on the remote machine:
 
-```
+```make
 all: build sync build_remote
 build:
 	# make sure to use orig_link in config file to use symlinks!
@@ -26,7 +26,7 @@ Uses [`retry`](https://github.com/kadwanev/retry) in-case the ssh connection fai
 
 and a little block added to my nginx config:
 
-```
+```nginx
 location /gallery/ {
   alias /home/user/static_files/gallery/;  # location
   try_files $uri $uri/ =404;
