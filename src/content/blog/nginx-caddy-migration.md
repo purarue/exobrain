@@ -532,7 +532,6 @@ handle_path /animeshorts* {
 
 <span style="font-size: 1rem">[semicolons aren't required in caddy, I just included them to trick the highlighting engine into giving it some nicer colors]</span>
 
-
 ### Websites
 
 For websites which have both frontend/backend pages, and CSS/JS, I deploy those at a subpath, like:
