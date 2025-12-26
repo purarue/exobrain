@@ -7,9 +7,10 @@ PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/
 #            #
 ##############
 
-./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES)
+./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES) 
 	npm run build
 	uglifycss ./dist/global.css --output ./dist/global.css
+	cp ./dist/404.html ./dist/notes/personal/404.html
 
 # if the sitemap is newer than all the source files, site is considered 'built'
 built: ./dist/sitemap-0.xml
@@ -17,6 +18,7 @@ built: ./dist/sitemap-0.xml
 build:
 	npm run build
 	uglifycss ./dist/global.css -o ./dist/global.css
+	cp ./dist/404.html ./dist/notes/personal/404.html
 
 # helper script
 # just generate types for the one library javascript file I have
