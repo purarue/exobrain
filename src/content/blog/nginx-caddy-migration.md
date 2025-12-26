@@ -537,6 +537,9 @@ handle_path /animeshorts* {
 }
 ```
 
+<span style="font-size: 1rem">[semicolons aren't required in caddy, I just included them to trick the highlighting engine into giving it some nicer colors]</span>
+
+
 ### Websites
 
 For websites which have both frontend/backend pages, and CSS/JS, I deploy those at a subpath, like:
@@ -565,7 +568,7 @@ handle_path /dbsentinel/* {
 }
 ```
 
-The important bit here is the `rewrite * /dbsentinel{path}`, as `caddy` does not allow the `proxy_pass` to have any trailing paths like `nginx` does.
+The important bit here is the `rewrite * /dbsentinel{path}`, as `caddy` does not allow the `reverse_proxy` to have any trailing paths like `nginx`'s `proxy_pass` does.
 
 ### Static Files/Errors
 
@@ -606,6 +609,8 @@ error_page 403 /error_html/403.html;
 ```nginx
 handle_path /x* {
     root /home/user/static_files/x/;
+    # note: this does mean that it doesn't return an actual 404 status
+    # code, but I'm okay with this as a hack for now
     try_files {path} {path}.html {path}/ 404.html;
 }
 
@@ -615,7 +620,8 @@ handle_path /x/notes/personal* {
     basicauth {
         user $<redacted_password_hash>;
     }
-    # since this has a different root, I did add a 'cp dist/404.html dist/notes/personal/404.html' to my site build
+    # since this has a different root, I did add a to my site build:
+    # 'cp dist/404.html dist/notes/personal/404.html'
     try_files {path} {path}.html {path}/ 404.html;
 }
 
