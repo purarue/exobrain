@@ -29,13 +29,6 @@ const matcher = {
 		figcaption .caption {
 			font-style: italic;
 		}
-		.photo-tag {
-			cursor: pointer;
-			user-select: none;
-		}
-		.photo-tag:focus {
-			outline: 1px dotted #555;
-		}
 	</style>
 	<p>
 		{photoDate(date)}
@@ -43,19 +36,26 @@ const matcher = {
 			tags.length > 0 && (
 				<>
 					{" | "}
-					<span id="phototags">
+					<span>
 						{tags.map((tag, idx) => {
 							const matched = (matcher as any)[tag];
 							return (
 								<span>
 									<span
 										class="photo-tag"
+										style={
+											matched !== undefined
+												? {
+														cursor: "pointer",
+													}
+												: undefined
+										}
 										data-idx={idx}
 										data-tag={tag}
 										data-detail={matched ?? ""}
 										data-show-detail="false"
 									>
-										<span class="content">{tag}</span>
+										{tag}
 									</span>
 									{idx < tags.length - 1 ? " | " : ""}
 								</span>
@@ -80,8 +80,7 @@ const matcher = {
 					const detail = el.dataset.detail;
 					const showDetail = el.dataset.showDetail === "true";
 					if (detail) {
-						const newText = showDetail ? tag : detail;
-						el.querySelector(".content").textContent = newText;
+						el.textContent = showDetail ? tag : detail;
 						el.setAttribute("data-show-detail", showDetail ? "false" : "true");
 					}
 				});
