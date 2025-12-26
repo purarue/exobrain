@@ -218,9 +218,8 @@ http {
         proxy_pass http://127.0.0.1:3000/projects/_next/;
     }
 
-    rewrite ^/p$ /p/ permanent;
-
     # =========== PUBLIC REMSYNC ===========
+    rewrite ^/p$ /p/ permanent;
     location /p/ {
         alias /home/user/p/;
         try_files $uri $uri/ @phoenix;
@@ -400,12 +399,12 @@ purarue.xyz {
 		try_files {path} =404
 	}
 
-	# ========== UTILS/DOTFILES ==========
+	# ========== CONFIG/UTILS ==========
 	handle_path /c/* {
 		reverse_proxy http://127.0.0.1:8051
 	}
 
-	# ========== SERVER MONITORING & LOGS ==========
+	# ========== DASHBOARD ==========
 	handle_path /dashboard/* {
 		rewrite /dashboard{path}
 		reverse_proxy http://127.0.0.1:8082
@@ -417,12 +416,6 @@ purarue.xyz {
 	# ========== SHORTURL ==========
 	handle_path /s/* {
 		reverse_proxy http://127.0.0.1:8040
-	}
-
-	# ========== WELL-KNOWN ==========
-	handle_path /.well-known/* {
-		root /home/user/static_files/.well-known/
-		try_files {path} {path}/ =404
 	}
 
 	# ========== EXOBRAIN/RSS ==========
