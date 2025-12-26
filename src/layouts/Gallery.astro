@@ -2,6 +2,7 @@
 import Base from "./Base.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import url_for from "../helpers/url";
+import PhotoCaption from "./PhotoCaption.astro";
 
 type Post = CollectionEntry<"photography"> | CollectionEntry<"art">;
 
@@ -15,12 +16,6 @@ const { mediaType } = Astro.props;
 const photos: Post[] = (await getCollection(mediaType)).sort((a, b) => {
 	return a.data.date > b.data.date ? -1 : 1;
 });
-
-
-function photoDate(date: Date) {
-	// format like YYYY/MM/DD
-	return date.toISOString().slice(0, 10).replace(/-/g, "/");
-}
 
 function capitalize(name: string | undefined): string {
 	if (name === undefined) {
@@ -61,14 +56,6 @@ function capitalize(name: string | undefined): string {
 			margin-left: auto;
 			margin-right: auto;
 		}
-		figcaption {
-			font-size: 0.9em;
-		}
-		figcaption .caption {
-			font-style: italic;
-		}
-		figcaption .tags {
-		}
 		.intro {
 			text-align: center;
 			margin-top: 2rem;
@@ -90,16 +77,11 @@ function capitalize(name: string | undefined): string {
 									src={url_for(`/${mediaType}/thumbs/${line.data.image}`)}
 								/>
 							</a>
-							<figcaption>
-								<p>
-									{photoDate(line.data.date)}{" "}
-									{line.data.tags.length > 0 &&
-										`| ${line.data.tags.join(" | ")}`}
-								</p>
-								{line.data.caption && (
-									<p class="caption">{line.data.caption}</p>
-								)}
-							</figcaption>
+							<PhotoCaption
+								date={line.data.date}
+								tags={line.data.tags}
+								caption={line.data.caption}
+							/>
 						</figure>
 					);
 				})
