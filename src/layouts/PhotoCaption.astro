@@ -47,9 +47,11 @@ const matcher = {
 											matched !== undefined
 												? {
 														cursor: "pointer",
+														userSelect: "none",
 													}
 												: undefined
 										}
+										role="button"
 										data-idx={idx}
 										data-tag={tag}
 										data-detail={matched ?? ""}
@@ -68,23 +70,3 @@ const matcher = {
 	</p>
 	{caption && <p class="caption">{caption}</p>}
 </figcaption>
-
-<script type="module" is:inline>
-	document.addEventListener("DOMContentLoaded", () => {
-		// prevent weird issue in dev from it binding events on every hot module reload
-		if (!window.__photo_tags_bound) {
-			window.__photo_tags_bound = true;
-			document.querySelectorAll(".photo-tag").forEach((el) => {
-				el.addEventListener("click", () => {
-					const tag = el.dataset.tag;
-					const detail = el.dataset.detail;
-					const showDetail = el.dataset.showDetail === "true";
-					if (detail) {
-						el.textContent = showDetail ? tag : detail;
-						el.setAttribute("data-show-detail", showDetail ? "false" : "true");
-					}
-				});
-			});
-		}
-	});
-</script>
