@@ -460,7 +460,6 @@ purarue.xyz {
 		file_server
 	}
 
-
 	# ========== FALLBACK STATIC ========
 	root /home/user/static_files/
 	file_server
