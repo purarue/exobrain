@@ -20,13 +20,13 @@ Heres my list classified by a few categories:
 ```
 Filter                                      Count  Runtime           Mean Score
 ------------------------------------------- -----  ----------------  -----------
-Completed                                   5981  284.53 days       4.13
-Completed TV Shows                          448  219.81 days       6.19
-Completed Movies over an hour long          230  17.51 days        5.97
-Completed OVA series                        148  17.40 days        6.06
-Completed with a runtime under 30 minutes   4981  21.22 days        3.75
-Completed music videos                      2482  6.76 days         3.73
-Dropped I actually watched some of          4006  42.14 days        3.57
+Completed                                    5981  284.53 days       4.13
+Completed TV Shows                            448  219.81 days       6.19
+Completed Movies over an hour long            230  17.51 days        5.97
+Completed OVA series                          148  17.40 days        6.06
+Completed with a runtime under 30 minutes    4981  21.22 days        3.75
+Completed music videos                       2482  6.76 days         3.73
+Dropped I actually watched some of           4006  42.14 days        3.57
 Dropped for categorization reasons          14098  -                 -
 ```
 
