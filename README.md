@@ -12,16 +12,23 @@ Other than that, the [launch_in_editor](./scripts/launch_in_editor.go) client/se
 
 <video src="https://github.com/purarue/exobrain/assets/7804791/7ab04b7e-8471-48b2-97ca-4779dd0d6e33" width=400></video>
 
-I deploy this to my site at `/x/`, with nginx:
+I deploy this to my site at `/x/`, with caddy:
 
-```
-rewrite ^/x$ /x/ permanent;
-rewrite ^/rss.xml /x/rss.xml permanent;
-rewrite ^/sitemap.xml$ /x/sitemap-index.xml permanent;
-
-location /x {
-  try_files $uri $uri.html $uri/ =404;
-  error_page 404 /x/404.html;
-  index index.html;
+```caddy
+redir /x /x/ permanent
+redir /rss /x/rss.xml permanent
+redir /rss.xml /x/rss.xml permanent
+redir /sitemap.xml /x/sitemap-index.xml permanent
+redir /blog /x/blog/ permanent
+handle_path /x* {
+    root /home/astrid/static_files/x/
+    try_files {path} {path}.html {path}/ 404.html
+}
+handle_path /x/notes/personal* {
+    root /home/astrid/static_files/x/notes/personal/
+    try_files {path} {path}.html {path}/ 404.html
+    basicauth {
+        notes $<password_hash_here>
+    }
 }
 ```
