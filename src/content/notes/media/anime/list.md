@@ -18,16 +18,16 @@ Yes, I get this looks wild, but I have not really dropped _19,000_. I have only 
 Heres my list classified by a few categories:
 
 ```
-Filter                                                                 Count  Runtime           Mean Score
--------------------------------------------------------------------  -------  ----------------  ------------
-Completed                                                               5981  284.53 days       4.13
-Completed TV Shows                                                       448  219.81 days       6.19
-Completed Movies over an hour long                                       230  17.51 days        5.97
-Completed OVA series                                                     148  17.40 days        6.06
-Completed with a total runtime under 30 minutes                         4981  21.22 days        3.75
-Completed music videos                                                  2482  6.76 days         3.73
-Dropped I actually watched some of                                      4006  42.14 days        3.57
-Dropped for categorization reasons (sequel, no raws/subs available)    14098  -                 -
+Filter                                      Count  Runtime           Mean Score
+------------------------------------------- -----  ----------------  -----------
+Completed                                   5981  284.53 days       4.13
+Completed TV Shows                          448  219.81 days       6.19
+Completed Movies over an hour long          230  17.51 days        5.97
+Completed OVA series                        148  17.40 days        6.06
+Completed with a runtime under 30 minutes   4981  21.22 days        3.75
+Completed music videos                      2482  6.76 days         3.73
+Dropped I actually watched some of          4006  42.14 days        3.57
+Dropped for categorization reasons          14098  -                 -
 ```
 
 Over the past 10 years of watching anime, I've seen 448 TV shows and 230 movies (which feels like a quite normal amount of anime to have seen, if you've been entrenched in the anime community for 10 years). The vast majority of my completed counts comes from watching random short anime under 30 minutes (short films, commercials, music videos, college graduation films)
