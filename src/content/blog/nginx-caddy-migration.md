@@ -1,5 +1,5 @@
 ---
-title: nginx to caddy migration
+title: "Devlog: nginx to caddy migration"
 description: Migrating my mess of a nginx config to caddy
 pubDate: 2025/12/25
 ---
