@@ -113,6 +113,6 @@ In order for that to work, my list has to have every database entry on it. So, e
 
 ---
 
-And that's it! You are now an expert on why a random girlie on the internet has a weird anime list.
+And that's it! You are now an expert on why a random girl on the internet has a weird anime list.
 
 ![](images/congrats.gif)
