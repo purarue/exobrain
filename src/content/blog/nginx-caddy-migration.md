@@ -611,7 +611,7 @@ handle_path /x/notes/personal* {
     basicauth {
         user $<redacted_password_hash>;
     }
-    # since this has a different root, I did add a to my site build:
+    # since this has a different root, I did add this to my site build:
     # 'cp dist/404.html dist/notes/personal/404.html'
     try_files {path} {path}.html {path}/ 404.html;
 }
