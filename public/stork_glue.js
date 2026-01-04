@@ -31,7 +31,7 @@
   }
   // if user hits Ctrl+K, open the search bar
   document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.key === "k") {
+    if ((e.ctrlKey && e.key === "k") || e.key === "/") {
       toggleSearch();
       e.preventDefault();
     }

@@ -54,7 +54,7 @@ lint: check frontmatter spell mypy flake8
 dev: stork
 	cp ./dist/index.st ./public/index.st
 	# wait 2 seconds, then open in browser
-	setsid -f sh -c 'sleep 2 && xdg-open http://localhost:4321/x/'
+	setsid -f bash -c 'wait-till-port 4321 && openurl http://localhost:4321/x/'
 	npm run dev
 
 

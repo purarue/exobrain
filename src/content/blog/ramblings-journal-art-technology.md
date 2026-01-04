@@ -49,7 +49,7 @@ I would still highly recommend journaling with a physical notebook. It sounds cl
 
 - write with my [fountain pen](https://us-shop.lamy.com/en_us/lamy-safari) in my little notebook
 - recording myself with my phone, often rambling for 20 minutes to just get everything out of my head (with a few post-processing scripts using a [whisper script](https://github.com/Irvingouj/auto-subtitle) to get subtitles so they're a bit more searchable)
-- with a [script](https://gist.github.com/purarue/bf1e82b29e87eb0bb3b88898e735deb5) that just opens a new text file on my laptop
+- with a [script](https://purarue.xyz/d/.config/zsh/aliases/journal?redirect) that just opens a new text file on my laptop
 
 ... and I guess that's the end of the post. I suppose I'll end it with a quote:
 
