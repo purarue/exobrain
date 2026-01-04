@@ -43,11 +43,13 @@ check:
 frontmatter:
 	python3 ./scripts/check_fields.py photos
 
-mypy:
-	find $(PYTHON_FILES) -exec mypy --install-types {} \;
+mypy: .mypy_cache
+.mypy_cache: $(PYTHON_FILES)
+	echo $(PYTHON_FILES) | tr ' ' '\n' | parallel mypy
+	touch .mypy_cache
 
 flake8:
-	find $(PYTHON_FILES) -exec flake8 {} +;
+	flake8 $(PYTHON_FILES);
 
 lint: check frontmatter spell mypy flake8
 
