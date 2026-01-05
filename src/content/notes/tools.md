@@ -31,15 +31,17 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 ### Browsers
 
-- [`floorp`](https://floorp.app/) (a firefox-fork) with extensions:
-  - [`vimium-ff`](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
+- [`qutebrowser`](https://github.com/qutebrowser/qutebrowser) as my main browser
+  - uses its built-in ad blocking and [`python-adblock`](https://github.com/ArniDagur/python-adblock) to block ads. not perfect but ok given the other positive trade-offs qutebrowser offers me
+  - [userscript manager/script](https://github.com/purarue/qute-script-manager) which installs:
+    - [youtube tweaks](https://greasyfork.org/en/scripts/540055-youtube-tweaker-pro-full-suite-v3-3-3-aggressive-ads-sponsorblock-pre-roll-sniper) for blocking ads, sponsorblock etc.
+- [`floorp`](https://floorp.app/) (a firefox-fork) for when I want to watch youtube/activities, do webscraping (for the nicer devtools/inspector) on a different profile
+  - [`vimium-ff`](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind.
   - [`RES`](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days
   - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix
-  - [Refined Github](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/) for general Github improvements
-  - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), so I can dark mode common websites
   - [Sponsorblock](https://sponsor.ajay.app/) to skip ads in youtube videos
-  - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader), so I can dark mode every website I visit. Does have considerable overhead, so I prefer finding CSS through stylus for websites I visit often
   - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads
+- [`tor`](https://www.torproject.org/download/) for even more privacy/if I want to delete history after I close a session
 - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://purarue.xyz/d/duck?redirect)/display some HTML nicely in the terminal (e.g. in [rread](https://purarue.xyz/d/rread?dark))
 
 ### General Workflow/Tools
