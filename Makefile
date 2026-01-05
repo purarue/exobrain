@@ -48,10 +48,12 @@ mypy: .mypy_cache
 	echo $(PYTHON_FILES) | tr ' ' '\n' | parallel mypy
 	touch .mypy_cache
 
-flake8:
+flake: .flake8
+.flake8: $(PYTHON_FILES)
 	flake8 $(PYTHON_FILES);
+	touch .flake8
 
-lint: check frontmatter spell mypy flake8
+lint: check frontmatter spell mypy flake
 
 dev: stork
 	cp ./dist/index.st ./public/index.st

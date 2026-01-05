@@ -1,4 +1,5 @@
 # build output
+.flake8
 dist/
 out/
 x/
