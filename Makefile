@@ -19,7 +19,7 @@ build:
 	npm run deploy
 
 type_check: .type_checked
-.type_checked: $(TYPESCRIPT_FILES)
+.type_checked: $(TYPESCRIPT_FILES) package.json package-lock.json
 	npm run check
 	touch .type_checked
 
