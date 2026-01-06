@@ -1,5 +1,6 @@
 # build output
 .flake8
+.spellchecked
 .type_checked
 dist/
 out/

@@ -15,16 +15,12 @@ if [[ -z "$commit_message" ]]; then
 	commit_message="$(gum input --prompt='commit message (empty to skip)> ')" || exit $?
 fi
 
-if ! wait-for-internet --timeout 1; then
-	echo 'No internet, skipping deploy...'
-fi
-
 if [[ -z "$commit_message" ]]; then
 	echo 'Deploying without committing...' >&2
 fi
 
 on_laptop() {
-	case "$(on_machine)" in
+	case "${ON_OS:=$(on_machine)}" in
 	linux_arch_*)
 		return 0
 		;;
