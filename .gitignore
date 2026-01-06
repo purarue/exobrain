@@ -1,5 +1,6 @@
 # build output
 .flake8
+.type_checked
 dist/
 out/
 x/

@@ -1,5 +1,7 @@
 SOURCE_FILES := $(shell find ./src ./public -type f ! -iname '*syncthing*')
 PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_fields.py scripts/journal-public scripts/meam-add
+TYPESCRIPT_FILES := $(shell find src -type f -iname '*.ts')
+
 
 ##############
 #            #
@@ -7,7 +9,7 @@ PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/
 #            #
 ##############
 
-./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES) 
+./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES) .type_checked
 	npm run deploy
 
 # if the sitemap is newer than all the source files, site is considered 'built'
@@ -15,6 +17,12 @@ built: ./dist/sitemap-0.xml
 # dummy target that triggers a deploy
 build:
 	npm run deploy
+
+type_check: .type_checked
+.type_checked: $(TYPESCRIPT_FILES)
+	npm run check
+	touch .type_checked
+
 
 # helper script
 # just generate types for the one library javascript file I have
