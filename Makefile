@@ -9,7 +9,7 @@ TYPESCRIPT_FILES := $(shell find ./src -type f \( -iname '*.ts' -o -iname '*.ast
 #            #
 ##############
 
-./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES) .type_checked
+./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES) .type_checked .mypy_cache .flake8 .spellchecked .conflicting_dirs
 	npm run deploy
 
 # if the sitemap is newer than all the source files, site is considered 'built'
@@ -43,8 +43,10 @@ spell: .spellchecked
 	spell '.' './src/'
 	touch .spellchecked
 
-check:
+check: .conflicting_dirs
+.conflicting_dirs: $(SOURCE_FILES)
 	python3 ./scripts/check_conflicting_dirs.py ./src/content
+	touch .conflicting_dirs
 
 frontmatter:
 	python3 ./scripts/check_fields.py photos
@@ -122,4 +124,4 @@ deploy: package.json built sync_on_server
 	@ echo "Manual compile on server done"
 
 clean:
-	rm -rf ./dist
+	rm -rf ./dist .spellchecked .flake8 .type_checked .mypy_cache .conflicting_dirs

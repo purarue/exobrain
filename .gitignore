@@ -2,6 +2,7 @@
 .flake8
 .spellchecked
 .type_checked
+.conflicting_dirs
 dist/
 out/
 x/
