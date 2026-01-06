@@ -1,0 +1,6 @@
+#!/bin/sh
+npm run build || {
+	npm run check && npm run build
+}
+uglifycss ./dist/global.css | sponge ./dist/global.css
+cp ./dist/404.html ./dist/notes/personal/404.html
