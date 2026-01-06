@@ -1,6 +1,6 @@
 SOURCE_FILES := $(shell find ./src ./public -type f ! -iname '*syncthing*')
 PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_fields.py scripts/journal-public scripts/meam-add
-TYPESCRIPT_FILES := $(shell find src -type f -iname '*.ts')
+TYPESCRIPT_FILES := $(shell find ./src -type f \( -iname '*.ts' -o -iname '*.astro' \))
 
 
 ##############
