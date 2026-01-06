@@ -6,5 +6,8 @@ title: WebRing
 - [Alvaro Videla](https://alvaro-videla.com/archive.html)
 - [Domenic](https://blog.domenic.me/)
 - [cj the x](https://www.cjthex.com/essays/)
-- [neocities](https://neocities.org/)
-- [plaintext productivity](https://plaintext-productivity.net/)
+- [corvid.cafe](https://corvid.cafe/home.html)
+
+Other webrings:
+
+- [xxiivv webring](https://webring.xxiivv.com/#icons)
