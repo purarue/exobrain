@@ -53,7 +53,7 @@ frontmatter:
 
 mypy: .mypy_cache
 .mypy_cache: $(PYTHON_FILES)
-	echo $(PYTHON_FILES) | tr ' ' '\n' | parallel mypy
+	echo $(PYTHON_FILES) | tr ' ' '\n' | parallel mypy --install-types --non-interactive
 	touch .mypy_cache
 
 flake: .flake8
