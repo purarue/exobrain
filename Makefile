@@ -61,6 +61,9 @@ flake: .flake8
 	flake8 $(PYTHON_FILES);
 	touch .flake8
 
+sync:
+	./scripts/sync_with_retry
+
 lint: check frontmatter spell mypy flake
 
 dev: stork
