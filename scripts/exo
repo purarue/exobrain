@@ -4,7 +4,7 @@
 # correctly based on the machine I'm on
 
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
-cd "${THIS_DIR}/.." || exit $?
+cd "${THIS_DIR}/../src/content" || exit $?
 
 PERSONAL_NOTES="${XDG_DOCUMENTS_DIR}/Notes/exo"
 
@@ -20,10 +20,20 @@ on_termux() {
 	esac
 }
 
-FILE="$(fd --absolute-path '\.md$' './src/content' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
-if [[ -n "${FILE}" ]]; then
-	editor "${FILE}" || true
-fi
+rg_lines() {
+	PICKED_LINE="$(rg --no-heading --with-filename --line-number --color ansi "$*" | fzf --ansi)" || exit $?
+	[[ -z "${PICKED_LINE}" ]] && return 1
+	printf '%s\n' "${PICKED_LINE}" | cut -d':' -f'1-2'
+}
+
+declare -a RG_PARTS
+# split into filename and line number
+readarray -d ':' -t RG_PARTS < <(rg_lines "$@")
+[[ -z "${RG_PARTS[*]}" ]] && exit 1
+# arithmetic substitution removes extra newline from number
+editor "+$((RG_PARTS[1]))" "${RG_PARTS[0]}"
+
+cd "$THIS_DIR/.." || exit $?
 
 if on_termux; then
 	make copy_personal_notes

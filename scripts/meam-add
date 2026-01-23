@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "autotui>=0.4.8",
+#     "click>=8.3.1",
+# ]
+# ///
+
 # https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory
 
 import os

@@ -18,7 +18,7 @@ To try:
 
 ---
 
-Spiced Tea Recipe
+### Spiced Chai Recipe
 
 Growing up in India used to drink this all the time. This is the recipe I've landed on after years of experimenting.
 
