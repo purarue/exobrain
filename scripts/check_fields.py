@@ -29,7 +29,7 @@ def photos(verbose: bool) -> None:
             img = get_img_from_markdown_file(p)
             assert isinstance(img, str)
             verbose_print(f"Image: {img}")
-            for subdir in ("full", "thumbs"):
+            for subdir in ("full", "thumbs", "raw"):
                 f = public_dir / mtype / subdir / img
                 verbose_print(f"Checking file: {f}")
                 if not f.exists():

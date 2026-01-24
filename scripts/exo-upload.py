@@ -62,6 +62,43 @@ def exiftool(path: Path) -> None:
     subprocess.run(cmd)
 
 
+def shrink_image(input_path, output_dir, target_size_mb=3, shrink_factor=0.95):
+    if not input_path.is_file():
+        raise FileNotFoundError(f"Input file {input_path} does not exist.")
+
+    target_size_bytes = target_size_mb * 1024 * 1024
+
+    img = Image.open(input_path)
+    filename = input_path.name
+    name, ext = os.path.splitext(filename)
+
+    output_path = output_dir / filename
+
+    counter = 1
+    while output_path.exists():
+        output_path = output_dir / f"{name}_{counter}{ext}"
+        counter += 1
+
+    img.save(output_path, optimize=True)
+
+    while output_path.stat().st_size > target_size_bytes:
+        width, height = img.size
+        new_width = int(width * shrink_factor)
+        new_height = int(height * shrink_factor)
+
+        if new_width < 1 or new_height < 1:
+            raise ValueError(
+                f"Image {input_path} became too small before reaching target size."
+            )
+
+        img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        img.save(output_path, optimize=True)
+
+    click.echo(
+        f"Saved resized image to {output_path} ({output_path.stat().st_size / (1024 * 1024):.2f} MB)"
+    )
+
+
 @click.group(help=__doc__)
 def main() -> None:
     pass
@@ -70,6 +107,7 @@ def main() -> None:
 class PublicInfo(NamedTuple):
     full: Path
     thumbs: Path
+    raw: Path
 
 
 @dataclass
@@ -88,6 +126,7 @@ class BaseImageMixin:
     @classmethod
     def public_dir(cls) -> PublicInfo:
         pb = PublicInfo(
+            raw=public_dir / cls.__name__.casefold() / "raw",
             full=public_dir / cls.__name__.casefold() / "full",
             thumbs=public_dir / cls.__name__.casefold() / "thumbs",
         )
@@ -173,6 +212,14 @@ class BaseImageMixin:
         target = self.public_dir().full / self.source.name
         if target.exists():
             click.secho(f"Full already exists {target}, aborting", fg="red")
+            sys.exit(1)
+        shrink_image(self.tempfile, self.public_dir().full)
+        return target
+
+    def save_input(self) -> Path:
+        target = self.public_dir().raw / self.source.name
+        if target.exists():
+            click.secho(f"Raw already exists {target}, aborting", fg="red")
             sys.exit(1)
         shutil.copy(self.tempfile, target)
         return target
@@ -332,6 +379,8 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     exiftool(thumb_path)
     full_path = file.create_full()
     exiftool(full_path)
+    save_raw = file.save_input()
+    exiftool(save_raw)
 
     created = file.create_metadata(
         img_path=file.source.name,
