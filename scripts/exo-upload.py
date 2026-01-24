@@ -57,7 +57,12 @@ def exiftool(path: Path) -> None:
     subprocess.run(cmd)
 
 
-def shrink_image(input_path, output_dir, target_size_mb=3, shrink_factor=0.95):
+def shrink_image(
+    input_path: Path,
+    output_dir: Path,
+    target_size_mb: int = 3,
+    shrink_factor: float = 0.95,
+) -> None:
     if not input_path.is_file():
         raise FileNotFoundError(f"Input file {input_path} does not exist.")
 
@@ -75,9 +80,10 @@ def shrink_image(input_path, output_dir, target_size_mb=3, shrink_factor=0.95):
         counter += 1
 
     img.save(output_path, optimize=True)
+    resized = None
 
     while output_path.stat().st_size > target_size_bytes:
-        width, height = img.size
+        width, height = (resized or img).size
         new_width = int(width * shrink_factor)
         new_height = int(height * shrink_factor)
 
@@ -86,8 +92,8 @@ def shrink_image(input_path, output_dir, target_size_mb=3, shrink_factor=0.95):
                 f"Image {input_path} became too small before reaching target size."
             )
 
-        img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
-        img.save(output_path, optimize=True)
+        resized = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        resized.save(output_path, optimize=True)
 
     click.echo(
         f"Saved resized image to {output_path} ({output_path.stat().st_size / (1024 * 1024):.2f} MB)"
