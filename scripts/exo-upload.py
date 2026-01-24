@@ -13,19 +13,14 @@ import tempfile
 
 from pathlib import Path
 from typing import (
-    Dict,
     NamedTuple,
     Literal,
     Any,
     assert_never,
     get_args,
-    Generator,
-    Optional,
-    List,
-    Type,
-    Iterator,
     Self,
 )
+from collections.abc import Generator, Iterator
 from datetime import datetime
 from dataclasses import dataclass
 from contextlib import contextmanager
@@ -229,8 +224,8 @@ class BaseImageMixin:
         *,
         img_path: str,
         date: datetime,
-        tags: List[str],
-        caption: Optional[str],
+        tags: list[str],
+        caption: str | None,
     ) -> Path:
         # get thumbnail height/width
         tf = self.public_dir().thumbs / self.source.name
@@ -274,7 +269,7 @@ class Art(BaseImageMixin):
     pass
 
 
-IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
+IMAGE_TYPES: dict[str, type[BaseImageMixin]] = {
     "photography": Photography,
     "art": Art,
 }
@@ -282,7 +277,7 @@ IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
 ImageType = Literal[tuple(IMAGE_TYPES.keys())]  # type: ignore[valid-type]
 
 
-def image_tags() -> List[str]:
+def image_tags() -> list[str]:
     from common import get_field_from_markdown_file
 
     found = []
@@ -300,13 +295,13 @@ def image_tags() -> List[str]:
 
 
 class Metadata(NamedTuple):
-    tags: Optional[List[str]]
-    caption: Optional[str]
+    tags: list[str] | None
+    caption: str | None
 
     @staticmethod
-    def attr_use_values() -> Dict[str, Any]:
-        def _fzf_prompt() -> List[str]:
-            chosen: List[str] = fzf.prompt(image_tags(), "--multi", "--prompt='Tags> '")
+    def attr_use_values() -> dict[str, Any]:
+        def _fzf_prompt() -> list[str]:
+            chosen: list[str] = fzf.prompt(image_tags(), "--multi", "--prompt='Tags> '")
             if not chosen:
                 if click.confirm("Add new tag?", default=False):
                     return [click.prompt("Tag", type=str, default="")]
@@ -459,7 +454,7 @@ def image_info(exists: bool, output: ImageInfoOutput) -> None:
     """
     Output image info
     """
-    items: List[ImageInfo] = []
+    items: list[ImageInfo] = []
     for info in iter_image_infos():
         if exists:
             if not os.path.exists(info.full_path):
