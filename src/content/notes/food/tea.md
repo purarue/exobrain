@@ -23,7 +23,7 @@ To try:
 Growing up in India used to drink this all the time. This is the recipe I've landed on after years of experimenting.
 
 - 1 star anise (dried)
-- 2 green cardamom pods (prefer the actual stuff, grinded doesnt give it the same taste), cut open
+- 2 green cardamom pods (prefer the actual stuff, grinded doesn't give it the same taste), cut open
 - ginger (about 1/5th of a root), minced; don't have to peel it
 - [optional] 1/10 of a stick of cinnamon (I just break off a piece), or ground cinnamon
 - [optional] full or ground cloves
