@@ -16,7 +16,7 @@ const base = new URL(fullUrl).pathname;
 if (!isProd) {
   fullUrl = `http://localhost:${port}${base}`;
 }
-console.log({
+console.log("config:", {
   site: fullUrl,
   isProd,
 });
