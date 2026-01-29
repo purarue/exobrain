@@ -122,7 +122,7 @@ git reset --hard HEAD^
 ```
 
 ```bash
-# change contents of the repository to the pathspec, but dont change the commit that youre pointing at
+# change contents of the repository to the pathspec, but dont change the commit that you're pointing at
 git reset --soft HEAD^
 
 # these is NO equivalent in restore/switch
