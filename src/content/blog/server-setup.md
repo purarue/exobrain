@@ -11,7 +11,7 @@ Setup the VM however with whatever you'd like. I've been a fan of debian on the 
 1. `ssh root@<ip-addr>`
 2. create a user for me and give me `sudo` privileges
 
-```shell
+```bash
 # my terminal doesn't have the best terminfo support out of the box; default to xterm-256color
 export TERM=xterm-256color
 adduser username
@@ -20,7 +20,7 @@ usermod -aG sudo username
 
 If needed, create the `.ssh` directory with perms
 
-```
+```bash
 su - username  # switch to user
 cd
 chmod go-w ~/
@@ -34,10 +34,10 @@ chmod 600 ~/.ssh/authorized_keys
 
 4. Add the block for the server to my `~/.ssh/config` file:
 
-```
+```ssh-config
 Host vps
   User username
-  Hostname <server ip>
+  HostName 149.439.32.43  # host ip
   IdentityFile ~/.ssh/private_key
 ```
 
@@ -62,7 +62,7 @@ PermitRootLogin no
 
 6b. May have to setup `ufw`, to setup ports
 
-```shell
+```bash
 # apt install ufw
 ufw allow 22
 ufw allow 80
@@ -76,7 +76,7 @@ Reload ssh: `sudo systemctl reload ssh`
 
 7. Setup a gitlab/github ssh key and start an `ssh-agent`, but dont '`eval ssh-agent`' every time you log in, just the first time, by putting this in `~/.bash_profile`:
 
-```shell
+```bash
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
@@ -95,7 +95,7 @@ This is heavily modified after my applications are set up, see below.
 
 9. Install lots of things to configure my applications/webapps, see [vps](https://github.com/purarue/vps):
 
-```shell
+```bash
 # setup docker
 sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add –
@@ -157,7 +157,7 @@ cd ~/vps
 
 Make sure the `server_name` directive exists in the `server` block running on port 80 in `/etc/nginx/sites-available/default` before trying to do `certbot`, so it can grab the domain name from there.
 
-```shell
+```bash
 sudo apt install certbot python-certbot-nginx
 sudo certbot --nginx
 sudo certbot renew --dry-run # test renewal
@@ -167,7 +167,7 @@ sudo certbot renew --dry-run # test renewal
 
 I do this for `/var/log/auth.log`, `nginx` and `fail2ban`:
 
-```shell
+```bash
 cd /etc/logrotate.d/
 sudoedit rsyslog  # remove auth
 sudo mv nginx nginx.disabled
@@ -176,7 +176,7 @@ sudo mv fail2ban fail2ban.disabled
 
 12. Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my [https://www.purarue.xyz](https://www.purarue.xyz) to just [https://purarue.xyz](https://purarue.xyz). In `/etc/nginx/sites-available/default`:
 
-```shell
+```bash
 # redirect from HTTP to HTTPS
 server {
   listen 80 default_server;
@@ -218,7 +218,7 @@ Its also possible to configure this at the `DNS` level using a `CNAME`, but I li
 
 13. Configure `linux`/`nginx` for better performance/more connections/open files (especially since I use phoenix as my main server):
 
-```shell
+```bash
 ## /etc/nginx/nginx.conf
 # at the top
 worker_rlimit_nofile 37268;
