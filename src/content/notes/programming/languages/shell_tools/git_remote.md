@@ -40,3 +40,5 @@ And lastly if you have a existing local repository that has some commits but you
 git remote add origin server:projects/apple
 git push --set-upstream origin main
 ```
+
+For more info check out the ['Git on the Server'](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) chapter of the git book.
