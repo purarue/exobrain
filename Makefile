@@ -61,6 +61,9 @@ flake: .flake8
 	flake8 $(PYTHON_FILES);
 	touch .flake8
 
+format:
+	fd -X rifleman
+
 sync:
 	./scripts/sync_with_retry
 
