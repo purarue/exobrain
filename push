@@ -10,9 +10,13 @@ fi
 
 commit_message="$*"
 if [[ -z "$commit_message" ]]; then
-	git --no-pager diff
-	git --no-pager diff --staged
-	commit_message="$(gum input --prompt='commit message (empty to skip)> ')" || exit $?
+	if ! git diff --quiet; then
+		echo 'Unstaged changes:'
+		git --no-pager diff
+	fi
+	if ! git diff --quiet --staged; then
+		commit_message="$(gum input --prompt='commit message (empty to skip)> ')" || exit $?
+	fi
 fi
 
 if [[ -z "$commit_message" ]]; then
