@@ -33,3 +33,5 @@ To summarize, I suppose, there is a spectrum of audiences here:
 - someone who wants to know why I'm recommending one thing over another
 - someone who wants to understand the technology/concept (data brokers, encryption, cookies, how tracking works) enough to make the decision as to why to pick one over another
 - anyone above this probably already has an opinion or knows what to use (or, could pretty quickly be convinced with a few sentences, assuming they already understand the jargon)
+
+TODO: look at <https://calmatters.org/economy/technology/2026/01/californians-block-personal-data/> and other companies that remove your info from data brokers? (Aura?)
