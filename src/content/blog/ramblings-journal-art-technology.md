@@ -15,7 +15,7 @@ In the last year or so, I've had this minor internal conflict pretty regularly a
 
 At the time, I didn't have many strong philosophical ideas about the use of technology. In fact, I was apathetic about most things.
 
-Writing these data exporters made me much more capable at writing code in general, managing open source 'communities' (for whatever small following my tools have), and just figuring out how I want to spend my time.
+Writing these data exporters made me much more capable at writing code in general, managing open source communities, and just figuring out how I want to spend my time.
 
 I am happy to maintain the tools I still actively use, but I am not really writing many new tools. Nowadays, I will often just use an open source tool with an easy to parse storage format, or write my own instead of using a website (or... sometimes I just use pen & paper rather than trying to create a perfect searchable-tokenizable-backed-up system. _Blasphemous!_). There aren't many other needs I have... I have messages from the few social media websites I use parsed, I have browser, CLI tool and music histories saved, I have markdown notes here and a good strategy for [journaling using notebooks](https://purarue.xyz/x/notes/process/journaling/). I'm sort of done.
 
