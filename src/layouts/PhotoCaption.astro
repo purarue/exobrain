@@ -50,7 +50,7 @@ const matcher = {
 													}
 												: undefined
 										}
-										role="button"
+										role={matched !== undefined ? "button" : undefined}
 										data-idx={idx}
 										data-tag={tag}
 										data-detail={matched ?? ""}
