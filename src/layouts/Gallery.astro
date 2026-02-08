@@ -66,12 +66,18 @@ function capitalize(name: string | undefined): string {
 			{
 				photos.map((line) => {
 					return (
-						<figure class="gallery-item">
+						<figure
+							class="gallery-item"
+							id={(line.data.date.getTime() / 1000).toString()}
+						>
 							<a
 								href={url_for(`/${mediaType}/full/${line.data.image}`)}
 								target="_blank"
 							>
 								<img
+									alt={
+										line.data.label !== undefined ? line.data.label : undefined
+									}
 									width={line.data.thumbnail_width}
 									height={line.data.thumbnail_height}
 									src={url_for(`/${mediaType}/thumbs/${line.data.image}`)}
