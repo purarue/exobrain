@@ -13,9 +13,11 @@ type Props = {
 
 const { mediaType } = Astro.props;
 
-const photos: Post[] = (await getCollection(mediaType)).sort((a, b) => {
-	return a.data.date > b.data.date ? -1 : 1;
-});
+const photos: Post[] = (await getCollection(mediaType))
+	.filter((p) => p.data.hidden === false)
+	.sort((a, b) => {
+		return a.data.date > b.data.date ? -1 : 1;
+	});
 
 function capitalize(name: string | undefined): string {
 	if (name === undefined) {

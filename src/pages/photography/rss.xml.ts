@@ -15,12 +15,14 @@ export async function GET(context: AstroUserConfig) {
     description: "my pictures!",
     site: context.site,
     trailingSlash: false,
-    items: photos.map((photo) => ({
-      ...photo.data,
-      description: photo.data.label ?? undefined,
-      link:
-        urljoin(import.meta.env.BASE_URL, "photography") +
-        `#${photo.data.date.getTime() / 1000}`,
-    })),
+    items: photos
+      .filter((p) => p.data.hidden === false)
+      .map((photo) => ({
+        ...photo.data,
+        description: photo.data.label ?? undefined,
+        link:
+          urljoin(import.meta.env.BASE_URL, "photography") +
+          `#${photo.data.date.getTime() / 1000}`,
+      })),
   });
 }

@@ -231,6 +231,7 @@ class BaseImageMixin:
         img_path: str,
         date: datetime,
         tags: list[str],
+        alt: str,
         caption: str | None,
     ) -> Path:
         # get thumbnail height/width
@@ -250,6 +251,7 @@ tags: {json.dumps(tags)}
 caption: {'null' if not caption else f'{json.dumps(caption)}'}
 thumbnail_width: {thumb_w}
 thumbnail_height: {thumb_h}
+label: {alt}
 full_width: {full_w}
 full_height: {full_h}
 ---
@@ -303,6 +305,7 @@ def image_tags() -> list[str]:
 class Metadata(NamedTuple):
     tags: list[str] | None
     caption: str | None
+    alt: str
 
     @staticmethod
     def attr_use_values() -> dict[str, Any]:
@@ -387,6 +390,7 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
         img_path=file.source.name,
         date=creation_date,
         tags=metadata.tags or [],
+        alt=metadata.alt,
         caption=metadata.caption,
     )
     click.secho("Created:", fg="green")

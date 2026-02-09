@@ -42,6 +42,7 @@ const photography = defineCollection({
     thumbnail_height: z.number(),
     full_width: z.number(),
     full_height: z.number(),
+    hidden: z.boolean().default(false),
   }),
 });
 
@@ -57,6 +58,7 @@ const art = defineCollection({
     thumbnail_height: z.number(),
     full_width: z.number(),
     full_height: z.number(),
+    hidden: z.boolean().default(false),
   }),
 });
 
