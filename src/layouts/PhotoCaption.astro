@@ -42,7 +42,7 @@ const matcher = {
 							return (
 								<span>
 									<span
-										class="photo-tag"
+										class={matched !== undefined ? "photo-tag" : undefined}
 										style={
 											matched !== undefined
 												? {

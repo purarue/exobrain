@@ -105,15 +105,13 @@ function capitalize(name: string | undefined): string {
 		if (!window.__photo_tags_bound) {
 			window.__photo_tags_bound = true;
 			document.querySelectorAll(".photo-tag").forEach((el) => {
-				el.addEventListener("click", () => {
-					const tag = el.dataset.tag;
-					const detail = el.dataset.detail;
-					const showDetail = el.dataset.showDetail === "true";
-					if (detail) {
-						el.textContent = showDetail ? tag : detail;
+				if (el.dataset.detail) {
+					el.addEventListener("click", () => {
+						const showDetail = el.dataset.showDetail === "true";
+						el.textContent = showDetail ? el.dataset.tag : el.dataset.detail;
 						el.setAttribute("data-show-detail", showDetail ? "false" : "true");
-					}
-				});
+					});
+				}
 			});
 		}
 	});
