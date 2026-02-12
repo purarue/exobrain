@@ -71,7 +71,7 @@ lint: check frontmatter spell mypy flake
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
-	# wait 2 seconds, then open in browser
+	# wait till the port is active, then open in browser
 	setsid -f bash -c 'wait-till-port 4321 && openurl http://localhost:4321/x/'
 	npm run dev
 

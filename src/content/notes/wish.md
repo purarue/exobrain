@@ -20,6 +20,7 @@ Tools:
 - [a cabinet scraper](https://youtu.be/-3SgDTOg1GA?t=257)
 - a book press for bookbinding
 - sliding t bevel
+- a whittling knife (though, I am pretty happy using my swiss army knife for now, it would just be a luxury) - probably a flexcut knife set
 
 Books:
 
