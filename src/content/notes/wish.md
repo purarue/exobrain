@@ -9,25 +9,26 @@ Charities:
 - [Internet Archive](https://archive.org/donate)
 - [ACLU](https://www.aclu.org/)
 
+Clothes:
+
+- a leather jacket
+- a flowy layered black midi dress
+
 Technology:
 
 - flipper zero
+- a DAC, maybe a Hiby M300 - so that I have a device just for playing music and I'm not on my phone all the time. If I find an old iPod/music player in a thrift store I could use that as well, just pretty rare
 - A film camera? With not terribly expensive film? Does this exist?
 - I want to build a [cyberdeck](https://www.youtube.com/watch?v=zcaQMXYRKSg)!, preferably something larger using spare [SOCs](https://en.wikipedia.org/wiki/System_on_a_chip) I already have/parts found at thrift store, in a [hard camera case](https://www.amazon.com/hard-camera-case/s?k=hard+camera+case) so its upgradade-able and I can swap out parts?
 
 Tools:
 
-- a small block plane for woodworking (find one secondhand somewhere?), or if I want to get a larger one, a number 4
+- a small block plane for woodworking (find one secondhand somewhere?), or if I want to get a larger one, a number 4 or jack (5)
 - [a cabinet scraper](https://youtu.be/-3SgDTOg1GA?t=257)
-- a book press for bookbinding (or maybe just some clamps and a piece of wood)
+- a book press for bookbinding (or maybe just some clamps and a piece of wood?)
 - sliding t bevel (not electronic!)
 - a whittling knife (though, I am pretty happy using my swiss army knife for now, it would just be a luxury) - probably a flexcut knife set
 
 Books:
 
 - [Shift Happens](https://shifthappens.site/) ~ out of stock
-
-Clothes:
-
-- a leather jacket
-- a flowy layered black midi dress
