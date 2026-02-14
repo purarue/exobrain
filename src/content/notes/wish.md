@@ -4,7 +4,7 @@ title: Wishlist
 
 [Inspired by the wish manifesto](https://taylor.town/wish-manifesto)
 
-Charities:
+Charities I want to donate to:
 
 - [Internet Archive](https://archive.org/donate)
 - [ACLU](https://www.aclu.org/)
