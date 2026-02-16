@@ -45,7 +45,7 @@ Once I started collecting data on myself, it was incredibly easy for me to fall 
 
 Collecting the data was also fun for me. It was a programming problem to solve - how do I get data off of this app or website, what can I do with the IP addresses, how can I possibly relate/combine this with other data I already have.
 
-It's hard to advocate for a 'reasonable' amount of moderation when there are obvious benefits for all of these things. Understanding calorie counts/nutritional labels, backing up your data, getting off big companies which silo your data, saving your info from websites -- are all generally good things to do. There are [lots of good reasons to be a bit proactive with this](https://beepb00p.xyz/hpi.html#motivation). It is probably partly my addictive tendencies that made me spiral and continue to collect data when I should have been reconsidering if the data itself was useful to me.
+It's hard to advocate for a 'reasonable' amount of moderation when there are obvious benefits for all of these things. Understanding nutritional labels, backing up your data, using open source and local tools instead of websites which sell and trap your data -- are all generally good things to do. There are [lots of good reasons to be a bit proactive with this](https://beepb00p.xyz/hpi.html#motivation). It is probably partly my addictive tendencies that made me spiral and continue to collect data when I should have been reconsidering if the data itself was useful to me.
 
 I do find a lot of happiness and satisfaction in being able to combine all these disparate data sources into [my feed](https://purarue.xyz/feed/), and being able to search/filter/sort through them.
 
