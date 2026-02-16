@@ -7,8 +7,6 @@ updatedDate: 2026/02/15
 
 This is quite of a messy post and I may continue to edit and improve it, but I wanted to sort of timestamp how I feel right now.
 
-If it feels like this post doesn't have a conclusion, its sort of because it doesn't. Its sort of a journal entry that I edited to make public, in hopes that maybe someone else gets something useful from any of my [inconsequential revelations](https://purarue.xyz/x/journal/202407241210/) -- a collection of ideas of how I currently feel about using my time -- how I use understand my relationship to collecting/scraping data from websites, video games, media, notes, journaling, and technology.
-
 ---
 
 In the last year or so, I've had this frequent internal conflict around the [quantified-self-adjacent](https://www.reddit.com/r/quantifiedself/) projects that [I've written](https://purarue.xyz/projects/) (Quantified Self is a weird overlap of technology, biometrics, and constant logging/reflection - to use technology to increase your self-knowledge through analyzing patterns of data you collect on yourself). This was what I did all the time from 2019-2022, mostly writing tools that scrape/parse GDPR exports and combine it a [lifelog](https://en.wikipedia.org/wiki/Lifelog) of sorts, to allow me to look back on what I was doing on particular days.
