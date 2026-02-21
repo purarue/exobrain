@@ -39,7 +39,6 @@ You should be backing up your password & TOTP data to an external drive or cloud
   - My Ad Center: Turn Off
   - Personalization: Turn Off
   - ... and so on. (all of these you should not be storing any history/data, and have everything off)
-  - You can go to 'Delete
 - In 'People & Sharing'
   - Disable location sharing
   - Remove 'Save contact info when you interact with people'
