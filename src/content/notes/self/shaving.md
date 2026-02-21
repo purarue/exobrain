@@ -2,7 +2,7 @@
 title: Double Edged Shaving Razors
 ---
 
-I use a double-edged safety razor
+I use a merkur double-edged safety razor
 
 metal impact:
 
