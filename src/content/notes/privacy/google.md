@@ -47,4 +47,4 @@ You should be backing up your password & TOTP data to an external drive or cloud
 Other stuff:
 
 - I would recommend going to <https://payments.google.com> and click 'Close payments profile' (to disable your google pay account)
-- Go to <https://mail.google.com> and setup mail forwarding to something else (see <https://www.privacyguides.org/en/email/> for recommendations). I would recommend setting it to forward and delete after forwarding (make sure to test this!)
+- Go to <https://mail.google.com> and setup mail forwarding to something else (see <https://www.privacyguides.org/en/email/> for recommendations). I would recommend setting it to forward and delete after forwarding (make sure to test this by sending an email to it, to ensure it forwards!)
