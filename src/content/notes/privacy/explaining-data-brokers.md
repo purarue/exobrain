@@ -12,6 +12,8 @@ Often in the spaces I'm in, people have decent security practices/websites they 
 
 I don't want to make them feel bad for being a human and using social media, because in my age demo/community, using social media is the normal thing to do. There are trade-offs everywhere, but since these platforms are often free, people are not aware of the trade-offs, past some "big company bad", "you are the product" platitude.
 
+I've thought about making a zine or something to recommend tools, or creating a zine to give people when they're using tech that is not secure, but I feel that moves into the 'toxic security culture' area, where I'm somehow suggesting that we can't do anything as a group until we're perfect on our security. I feel a better way (and what I've been doing) is to lead by example -- whenever we have to collaborate on something or share files I use a cryptpad/proton drive instead of google, and that just makes people aware of these as options.
+
 When one of my friends asks me "well, why use this technology over this one" or "what are the risks with using VPNs/logging into websites/which browser should I be using?", I don't feel good giving them a one word answer because the technologies and recommendations that people have change all the time. There's sort of two audiences for this, I suppose:
 
 - People who are interested in knowing why I tell them to follow 'x security practice' or 'use this application'
