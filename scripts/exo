@@ -6,7 +6,7 @@
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}/../src/content" || exit $?
 
-PERSONAL_NOTES="${XDG_DOCUMENTS_DIR}/Notes/exo"
+PERSONAL_NOTES="${SHARED_DIR}/Notes/exo"
 
 if [[ ! -d "${PERSONAL_NOTES}" ]]; then
 	echo "Personal notes directory not found: ${PERSONAL_NOTES}" >&2

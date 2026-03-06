@@ -96,14 +96,14 @@ built_and_stork: built ./dist/index.st
 #######################
 
 # For examples of use, check out the ./push script
-
-LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XDG_DOCUMENTS_DIR)/Notes/exo/"; else echo ""; fi)
+LOCAL_NOTES_DIR := $(shell if [ -d "${SHARED_DIR}" ]; then realpath "$(SHARED_DIR)/Notes/exo/"; else echo ""; fi)
 
 link_personal_notes:
-	@ # sync from ~/Documents/Notes/exo/ to ./src/content/notes/personal
+	@ # sync from ~/Shared/Notes/exo/ to ./src/content/notes/personal
+	@ # WARN: THIS IS DANGEROUS! I NEED TO FIX THIS. If SHARED_DIR doesnt exist then it links *EVERYTHING* into my Notes/exo dir
 	rsync -Pah --checksum --delete --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
 
-# in case I made changes on my phone in my ~/Documents directory
+# in case I made changes on my phone in my ~/Shared directory
 # I can't link between the two directories because its a cross-device link
 # TODO: might be able to use a symbolic link? Not sure how that would work with astros content collections
 copy_personal_notes:

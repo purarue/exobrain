@@ -27,3 +27,5 @@ To summarize:
 The three small notebooks I carry around with a pen, in a [piece of leather with a piece of elastic](https://www.newestornotebook.com/product/b075zvkxw5/):
 
 ![](./images/journal.jpg)
+
+I use a Lamy Safari and Shikon Kuretake purple ink
