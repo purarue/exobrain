@@ -14,8 +14,8 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
   - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like [highlighting and auto completion](https://github.com/marlonrichert/zsh-autocomplete). Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`
   - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/purarue/bootstrap/) script sets up new bash servers for me nicely, see [this post](../../blog/server-setup/) for more info
 - Terminal
-  - [`wezterm`](https://wezfurlong.org/wezterm/index.html), which I've customized some:
-    - a special [`cat`](https://github.com/purarue/dotfiles/blob/8457f501779f6eefccef14a9551c1eeafe0d629e/.config/zsh/progressive_enhancement.zsh#L72-L107) alias which lets me `cat` images and directories, while in the terminal
+  - [`kitty`](https://github.com/kovidgoyal/kitty) - for wayland support
+  - a special [`cat`](https://github.com/purarue/dotfiles/blob/8457f501779f6eefccef14a9551c1eeafe0d629e/.config/zsh/progressive_enhancement.zsh#L72-L107) alias which lets me `cat` images and directories, while in the terminal
 
 ### OS-stuff
 
@@ -31,11 +31,7 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 ### Browsers
 
-- [`qutebrowser`](https://github.com/qutebrowser/qutebrowser) as my main browser
-  - uses its built-in ad blocking and [`python-adblock`](https://github.com/ArniDagur/python-adblock) to block ads. not perfect but ok given the other positive trade-offs qutebrowser offers me
-  - [userscript manager/script](https://github.com/purarue/qute-script-manager) which installs:
-    - [youtube tweaks](https://greasyfork.org/en/scripts/540055-youtube-tweaker-pro-full-suite-v3-3-3-aggressive-ads-sponsorblock-pre-roll-sniper) for blocking ads, sponsorblock etc.
-- [`floorp`](https://floorp.app/) (a firefox-fork) for when I want to watch youtube/activities, do webscraping (for the nicer devtools/inspector) on a different profile
+- [`floorp`](https://floorp.app/) (a firefox-fork), set to delete my history when I exit the application
   - [`vimium-ff`](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind.
   - [`RES`](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days
   - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix
@@ -47,11 +43,10 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 ### General Workflow/Tools
 
 - Editor: nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/purarue/dotfiles/tree/master/.config/nvim), mostly in lua
-- Email [`neomutt`](https://github.com/neomutt/neomutt) for email, using [mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard) as a configuration layer to set it up
 - RSS: [`newsraft`](https://codeberg.org/grisha/newsraft) for youtube/news/blogs. I have a [script](https://purarue.xyz/d/youtube-user-id?redirect) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://purarue.xyz/d/linkhandler?redirect) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/purarue/mpvf/) instead of visiting youtube in the browser
 - Backups:
   - [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
-  - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [small script](https://purarue.xyz/d/restic-backup?redirect) to help manage all of that
+  - [restic](https://restic.net/) to a local drive, to have separate, offline, snapshots, using a [script](https://purarue.xyz/d/restic-backup?redirect) to help manage all of that
 - Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://purarue.xyz/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/purarue/full_todotxt) for adding todos. The TUI I wrote forces lets me enter a deadline using plain english and converts it to a datetime, so is nice for quick reminders. [todotxt-more](https://git.sr.ht/~proycon/todotxt-more) has some great addons as well
 - Calendar: [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/purarue/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
 - File Manager: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://purarue.xyz/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://purarue.xyz/d/scope.sh?redirect) (previewer)
@@ -71,14 +66,21 @@ For other stuff I might be using, see [my github stars](https://github.com/purar
 
 ### Android Apps
 
+I run [Graphene OS](https://grapheneos.org/) on my Pixel
+
 - [termux](https://termux.dev/en/) - terminal
-- [F-droid](https://f-droid.org/) to download applications not on the play store
-- [Pano-Scobbler](https://play.google.com/store/apps/details?id=com.arn.scrobble&hl=en_US&gl=US&pli=1) to scrobble to last.fm/listenbrainz
-- [gpslogger](https://gpslogger.app/) to save my location
+- [F-droid](https://f-droid.org/) and [aurora](https://store.auroraoss.com/) to download applications
 - [syncthing](https://f-droid.org/packages/com.nutomic.syncthingandroid/) to sync music/data from my computer to my phone
-- [activity watch](https://play.google.com/store/apps/details?id=net.activitywatch.android&hl=en_US&gl=US) - app usage tracker
-- [keepass2android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android&hl=en_US&gl=US) to use my password database on my phone (synced using syncthing)
-- [sms backup & restore](https://play.google.com/store/apps/details?id=com.riteshsahu.SMSBackupRestore&hl=en_US) to save my call logs/sms messages
+- [keepassdx](https://www.keepassdx.com/) to use my password database on my phone (synced using syncthing)
+- [fossify gallery](https://f-droid.org/packages/org.fossify.gallery/) to view images
+- [osmand](https://osmand.net/) for maps
+- [ntfy.sh](https://github.com/binwiederhier/ntfy-android) to send myself notifications
+- [OpenCamera](https://f-droid.org/packages/net.sourceforge.opencamera/) as my camera
+- [foobar2000](https://www.foobar2000.org/android) to listen to music
+- [transcribro](https://github.com/soupslurpr/Transcribro) for on-device speech to text
+- [ironfox](https://gitlab.com/ironfox-oss/IronFox) as my browser
+- [binaryeye](https://github.com/markusfisch/BinaryEye) to scan QR/bar codes
+- [fossify voice recorder](https://f-droid.org/packages/org.fossify.gallery/) to save voice memos
 
 ### CLI tools I use all the time
 

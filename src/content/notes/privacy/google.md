@@ -2,7 +2,7 @@
 title: Hardening Google Account
 ---
 
-Some steps I followed to harden google account. If you can just delete your account that is preferable, but I am currently migrating to a new base email provider and need to keep it for a while to ensure any accounts I need access to I still have access to. 
+Some steps I followed to harden google account. If you can just delete your account that is preferable, but I am currently migrating to a new base email provider and need to keep it for a while to ensure any accounts I need access to I still have access to.
 
 This requires you to have a password manager and Authenticator App setup (I use [KeepassXC](https://github.com/keepassxreboot/keepassxc) for both of those, split into 2 separate keepass db files with different passwords (which I remember)). See [PrivacyGuides](https://www.privacyguides.org/en/passwords/) for more recommendations.
 

@@ -43,16 +43,14 @@ def main() -> None:
     nt = prompt_namedtuple(Song, attr_use_values={"memory": edit_in_vim})
 
     assert not target.exists()
-    target.write_text(
-        f"""---
+    target.write_text(f"""---
 name: {nt.song_name}
 url: {nt.url}
 estimated_year: {nt.estimated_year}
 ---
 
 {nt.memory}
-"""
-    )
+""")
     click.echo(f"Created {target}")
 
 
