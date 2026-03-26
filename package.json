@@ -17,7 +17,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@ltd/j-toml": "^1.38.0",
-    "astro": "^5.16.15",
+    "astro": "^5.18.1",
     "astro-compress": "^2.3.8",
     "typescript": "^5.9.3"
   },
