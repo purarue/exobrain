@@ -1,4 +1,4 @@
-(async () => {
+const attach = async () => {
   // this changes the 'Exobrain' title in the top left to 'Editor'
   // if my server is running on port 12593, and the current page is an article
   //
@@ -30,4 +30,11 @@
   title.style.cursor = "pointer";
   title.style.textDecoration = "underline";
   title.role = "button";
-})();
+};
+
+// NOTE: disabled this for now because on certain browsers it asks the user
+// for permission before sending a request to localhost, which is not something
+// I want to do. may re-enable this by having me set something in localstorage
+// using a userscript or something in the future (or just not have it)
+//
+// attach()
