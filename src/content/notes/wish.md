@@ -18,10 +18,8 @@ Technology:
 
 Tools:
 
-- a small block plane for woodworking (find one secondhand somewhere?), or if I want to get a larger one, a number 4 or jack (5)
 - [a cabinet scraper](https://youtu.be/-3SgDTOg1GA?t=257)
 - a book press for bookbinding (or maybe just some clamps and a piece of wood?)
-- sliding t bevel (not electronic!)
 - a whittling knife (though, I am pretty happy using my knife for now, it would just be a luxury) - probably a flexcut knife set
 
 Books:
