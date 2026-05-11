@@ -9,7 +9,7 @@ This is quite of a messy post and I may continue to edit and improve it, but I w
 
 ---
 
-In the last year or so, I've had this frequent internal conflict around the [quantified-self-adjacent](https://www.reddit.com/r/quantifiedself/) projects that [I've written](https://purarue.xyz/projects/) (Quantified Self is a weird overlap of technology, biometrics, and constant logging/reflection - to use technology to increase your self-knowledge through analyzing patterns of data you collect on yourself). This was what I did all the time from 2019-2022, mostly writing tools that scrape/parse GDPR exports and combine it a [lifelog](https://en.wikipedia.org/wiki/Lifelog) of sorts, to allow me to look back on what I was doing on particular days.
+In the last year or so, I've had this frequent internal conflict around the [quantified-self-adjacent](https://www.reddit.com/r/quantifiedself/) projects that [I've written](https://purarue.xyz/projects/) (Quantified Self is a overlap of technology, biometrics, and constant logging/reflection - to use technology to increase your self-knowledge through analyzing patterns of data you collect on yourself). This was what I did all the time from 2019-2022, mostly writing tools that scrape/parse GDPR exports and combine it a [lifelog](https://en.wikipedia.org/wiki/Lifelog) of sorts, to allow me to look back on what I was doing on particular days.
 
 At the time, I didn't have many strong philosophical ideas about the use of technology. In fact (for [_reasons_](https://letterboxd.com/purarue/list/trans-core/detail/) that are abundantly clear to me now), I was pretty apathetic about most things.
 
