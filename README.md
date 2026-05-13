@@ -21,11 +21,11 @@ redir /rss.xml /x/rss.xml permanent
 redir /sitemap.xml /x/sitemap-index.xml permanent
 redir /blog /x/blog/ permanent
 handle_path /x* {
-    root /home/astrid/static_files/x/
+    root /home/user/static_files/x/
     try_files {path} {path}.html {path}/ 404.html
 }
 handle_path /x/notes/personal* {
-    root /home/astrid/static_files/x/notes/personal/
+    root /home/user/static_files/x/notes/personal/
     try_files {path} {path}.html {path}/ 404.html
     basicauth {
         notes $<password_hash_here>
