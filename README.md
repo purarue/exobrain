@@ -8,10 +8,6 @@ This uses [astro's content collections](https://docs.astro.build/en/tutorials/ad
 
 Search works using [stork](https://stork-search.net/) - that builds an index at buildtime and uses wasm on the frontend to search
 
-Other than that, the [launch_in_editor](./scripts/launch_in_editor.go) client/server code will ping the localhost server running locally on my machine whenever I'm viewing any webpage with content, adding a button so I can quickly edit something if I want to:
-
-<video src="https://github.com/purarue/exobrain/assets/7804791/7ab04b7e-8471-48b2-97ca-4779dd0d6e33" width=400></video>
-
 I deploy this to my site at `/x/`, with caddy:
 
 ```caddy
