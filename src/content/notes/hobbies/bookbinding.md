@@ -8,3 +8,5 @@ title: Bookbinding
 - for linen thread, use a 18/3
 - cotton can also be used, or embroidery floss
 - can wax thread with candle or beeswax (easier threading and prevents knots)
+
+paper cover using adhesive video that I like: <https://www.youtube.com/watch?v=GiqGK9rAhOw>
