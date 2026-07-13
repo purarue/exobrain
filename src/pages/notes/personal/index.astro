@@ -2,7 +2,7 @@
 import NotesIndexTree from '../../../layouts/NotesIndexTree.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('notes')).filter((post) => post.slug.startsWith("personal/"));
+const posts = (await getCollection('notes')).filter((post) => post.id.startsWith("personal/"));
 ---
 
 <NotesIndexTree skip_directories={true} posts={posts} title="Personal Notes Index" description="Personal notes" />

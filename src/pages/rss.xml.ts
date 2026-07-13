@@ -12,12 +12,12 @@ export async function GET(context: AstroUserConfig) {
     );
   }
   return rss({
-    title: "purarue's notes",
+    title: "purarue's blog",
     description: SITE_DESCRIPTION,
     site: context.site,
     items: posts.map((post) => ({
       ...post.data,
-      link: urljoin(import.meta.env.BASE_URL, "blog", `${post.slug}/`),
+      link: urljoin(import.meta.env.BASE_URL, "blog", `${post.id}/`),
     })),
   });
 }

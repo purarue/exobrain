@@ -24,6 +24,9 @@ console.log("config:", {
 // https://astro.build/config
 export default defineConfig({
   site: fullUrl,
+  legacy: {
+    collectionsBackwardsCompat: true,
+  },
   prefetch: {
     defaultStrategy: "hover",
     prefetchAll: true, // on hover, pre fetch site links

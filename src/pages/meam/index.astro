@@ -1,20 +1,23 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
-import url_for from '../../helpers/url';
-import { meamTitle } from '../../helpers/meam';
+import Base from "../../layouts/Base.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import url_for from "../../helpers/url";
+import { meamTitle } from "../../helpers/meam";
 
-type Post = CollectionEntry<'meam'>;
+type Post = CollectionEntry<"meam">;
 
-const posts: Post[] = (await getCollection('meam'))
-.filter((a) => a.data.unlisted === false)
-.sort((a, b) => {
-	return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
-});
-
+const posts: Post[] = (await getCollection("meam"))
+	.filter((a) => a.data.unlisted === false)
+	.sort((a, b) => {
+		return a.data.estimated_year > b.data.estimated_year ? 1 : -1;
+	});
 ---
 
-<Base title="MEAMs" description="Music Evoked Autobiographic Memories" disableFooter={true}>
+<Base
+	title="MEAMs"
+	description="Music Evoked Autobiographic Memories"
+	disableFooter={true}
+>
 	<style>
 		ul {
 			display: flex;
@@ -51,19 +54,23 @@ const posts: Post[] = (await getCollection('meam'))
 				font-size: 1.25rem;
 			}
 		}
-		</style>
+	</style>
 	<p>
-	A <a href="https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory">MEAM</a> is a Music Evoked Autobiographical Memory. Whenever I hear one of these songs, I am transported back to a certain place/memory.
+		A <a
+			href="https://en.wikipedia.org/wiki/Music-evoked_autobiographical_memory"
+			>MEAM</a
+		> is a Music Evoked Autobiographical Memory. Whenever I hear one of these songs,
+		I am transported back to a certain place/memory.
 	</p>
 	<section>
 		<ul>
-			{posts.map((line) => (
-				<li>
-					<a href={url_for(`meam/${line.slug}/`)}>
-					{meamTitle(line.data)}
-					</a>
-			</li>
-			))}
+			{
+				posts.map((line) => (
+					<li>
+						<a href={url_for(`meam/${line.id}/`)}>{meamTitle(line.data)}</a>
+					</li>
+				))
+			}
 		</ul>
 	</section>
 </Base>

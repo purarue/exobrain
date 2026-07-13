@@ -49,7 +49,7 @@ const skipdirs = skip_directories || false;
 					{line.data ? (
 							<h4 class="title">
 								{line.text}
-								<a href={url_for(`notes/${line.data.slug}/`)}>
+								<a href={url_for(`notes/${line.data.id}/`)}>
 									{line.name}
 								</a>
 							</h4>

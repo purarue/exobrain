@@ -1,8 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { z } from "zod";
+import { glob } from "astro/loaders"
+import { defineCollection } from "astro:content";
 
 const blog = defineCollection({
-  type: "content",
-  // Type-check frontmatter using a schema
+  loader: glob({ base: './src/content/blog', pattern: '**/*.md' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -14,7 +15,7 @@ const blog = defineCollection({
 });
 
 const notes = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/notes', pattern: '**/*.md' }),
   // type-check frontmatter using schema
   schema: z.object({
     title: z.string(),
@@ -22,7 +23,7 @@ const notes = defineCollection({
 });
 
 const journal = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/journal', pattern: '**/*.md' }),
   schema: z.object({
     date: z.number().transform((val) => new Date(val * 1000)),
     unlisted: z.boolean().optional().default(false),
@@ -31,7 +32,7 @@ const journal = defineCollection({
 });
 
 const photography = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/photography', pattern: '**/*.md' }),
   schema: z.object({
     image: z.string(),
     date: z.number().transform((val) => new Date(val * 1000)),
@@ -47,7 +48,7 @@ const photography = defineCollection({
 });
 
 const art = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/art', pattern: '**/*.md' }),
   schema: z.object({
     image: z.string(),
     date: z.number().transform((val) => new Date(val * 1000)),
@@ -75,7 +76,7 @@ function toNameObject(name: string): { title: string; artist: string } {
 
 // music evoked autobiographical memory
 const meam = defineCollection({
-  type: "content",
+  loader: glob({ base: './src/content/meam', pattern: '**/*.md' }),
   schema: z.object({
     // split by | into name/artist
     name: z.string().transform(toNameObject),

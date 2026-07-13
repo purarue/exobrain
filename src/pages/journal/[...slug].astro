@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Journal from "../../layouts/Journal.astro";
 import url_for from "../../helpers/url";
 
@@ -9,23 +9,28 @@ export type Linked<T> = {
 	next: T | undefined;
 };
 
-
 interface EntryWithUnlisted {
-	 data: {
-    unlisted: boolean
-  }
+	data: {
+		unlisted: boolean;
+	};
 }
 
 // if something is unlisted should not be displayed in pages/prev/next buttons
 export const isNotUnlisted = (p: EntryWithUnlisted | undefined): boolean => {
-		if (p === undefined) {
-			return false
-		}
-		return p.data.unlisted === false
-}
+	if (p === undefined) {
+		return false;
+	}
+	return p.data.unlisted === false;
+};
 
 // correctly handle prev/next if some are unlisted
-export function linked<T>({ posts, isPublic }: { posts: T[], isPublic?: (t: T | undefined) => boolean }): Linked<T>[] {
+export function linked<T>({
+	posts,
+	isPublic,
+}: {
+	posts: T[];
+	isPublic?: (t: T | undefined) => boolean;
+}): Linked<T>[] {
 	const res: Linked<T>[] = [];
 	let prev = undefined;
 	let next = undefined;
@@ -36,12 +41,12 @@ export function linked<T>({ posts, isPublic }: { posts: T[], isPublic?: (t: T | 
 				// if public, and this is public, use it
 				if (isPublic(posts[j])) {
 					next = posts[j];
-					break
+					break;
 				}
 			} else {
 				// if no function to determine visibility, use everything
 				next = posts[j];
-				break
+				break;
 			}
 		}
 		res.push({ prev, cur: posts[i]!, next });
@@ -61,17 +66,19 @@ export async function getStaticPaths() {
 		return a.data.date > b.data.date ? -1 : 1;
 	});
 
-	return linked({ posts, isPublic: isNotUnlisted }).map((data: Linked<CollectionEntry<"journal">>) => {
-		const props: Props = {
-			...data.cur,
-			prev_slug: data.prev?.slug,
-			next_slug: data.next?.slug,
-		};
-		return {
-			params: { slug: data.cur.slug },
-			props,
-		};
-	});
+	return linked({ posts, isPublic: isNotUnlisted }).map(
+		(data: Linked<CollectionEntry<"journal">>) => {
+			const props: Props = {
+				...data.cur,
+				prev_slug: data.prev?.id,
+				next_slug: data.next?.id,
+			};
+			return {
+				params: { slug: data.cur.id },
+				props,
+			};
+		},
+	);
 }
 type PropsBase = CollectionEntry<"journal">;
 type Props = PropsBase & {
@@ -80,12 +87,12 @@ type Props = PropsBase & {
 };
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Journal
 	{...post.data}
-	editor_slug={post.slug}
+	editor_slug={post.id}
 	prev_slug={post.prev_slug ?? undefined}
 	next_slug={post.next_slug ?? undefined}
 >

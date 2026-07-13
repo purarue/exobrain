@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Meam from "../../layouts/Meam.astro";
 import { linked, type Linked } from "../journal/[...slug].astro";
 
@@ -10,11 +10,11 @@ export async function getStaticPaths() {
 	return linked({ posts }).map((data: Linked<CollectionEntry<"meam">>) => {
 		const props: Props = {
 			...data.cur,
-			prev_slug: data.prev?.slug,
-			next_slug: data.next?.slug,
+			prev_slug: data.prev?.id,
+			next_slug: data.next?.id,
 		};
 		return {
-			params: { slug: data.cur.slug },
+			params: { slug: data.cur.id },
 			props,
 		};
 	});
@@ -26,12 +26,12 @@ type Props = PropsBase & {
 };
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Meam
 	{...post.data}
-	editor_slug={post.slug}
+	editor_slug={post.id}
 	prev_slug={post.prev_slug ?? undefined}
 	next_slug={post.next_slug ?? undefined}
 >
