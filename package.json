@@ -18,7 +18,8 @@
     "@ltd/j-toml": "^1.38.0",
     "astro": "^5.18.1",
     "astro-compress": "^2.3.8",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "uglifycss": "^0.0.29"
   },
   "devDependencies": {
     "prettier": "^3.3.3",

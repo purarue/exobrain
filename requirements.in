@@ -1,0 +1,9 @@
+python-frontmatter
+click
+git+https://github.com/python/mypy
+autotui
+pillow
+pyfzf-iter
+flake8
+types-dateparser
+types-defusedxml

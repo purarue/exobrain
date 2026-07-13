@@ -7,3 +7,5 @@ title: Concepts
 [Parkinson's Law](https://en.wikipedia.org/wiki/Parkinson%27s_law) is the adage that "work expands so as to fill the time available for its completion
 
 [function coloring](https://www.tedinski.com/2018/11/13/function-coloring.html) - useful concept for describing how sync/async functions infect others. In javascript making one async often means you have to make all of em (or use a callback to get around it). Something like go with its goroutines completely avoids this - you can call a sync function from async, or async from sync
+
+[spectacle theory](https://en.wikipedia.org/wiki/Spectacle_(critical_theory))
